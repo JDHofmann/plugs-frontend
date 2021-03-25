@@ -12,7 +12,14 @@ export default function Home({user, products}) {
     <div>
       <Header user={user}/>
       <h1>Home</h1>
-      {renderProductByCategory("phone")}
+      <div>
+        <h2>Phones</h2>
+        {renderProductByCategory("phone")}
+      </div>
+      <div>
+        <h2>TV's</h2>
+        {renderProductByCategory("tv")}
+      </div>
     </div>
   )
 }
