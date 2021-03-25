@@ -1,5 +1,5 @@
+import CategoryContainer from "../components/CategoryContainer"
 import Header from "../components/header"
-
 
 export default function Home({user, products}) {
 
@@ -20,6 +20,7 @@ export default function Home({user, products}) {
         <h2>TV's</h2>
         {renderProductByCategory("tv")}
       </div>
+      <CategoryContainer />
     </div>
   )
 }
