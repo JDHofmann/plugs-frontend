@@ -1,8 +1,11 @@
+import withContext from "../withContext";
 
-export default function CategoryContainer(){
+function CategoryContainer(){
     return (
         <div>
             Category Container
         </div>
     )
 }
+
+export default withContext(CategoryContainer);

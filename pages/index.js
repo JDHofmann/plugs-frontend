@@ -1,7 +1,11 @@
 import CategoryContainer from "../components/CategoryContainer"
 import Header from "../components/header"
+import Context from "../Context";
+import { useState } from "react";
 
 export default function Home({user, products}) {
+
+const [ cart, setCart ] = useState([]);
 
   const renderProductByCategory = (category) => {
     let filteredProducts = products.filter( p => p.category === category)
@@ -9,19 +13,26 @@ export default function Home({user, products}) {
   }
   
   return (
-    <div>
-      <Header user={user}/>
-      <h1>Home</h1>
+    <Context.Provider value={{
+      user: user, 
+      products: products,
+      cart: cart,
+      setCart: setCart
+      }}>
       <div>
-        <h2>Phones</h2>
-        {renderProductByCategory("phone")}
+        <Header user={user}/>
+        <h1>Home</h1>
+        <div>
+          <h2>Phones</h2>
+          {renderProductByCategory("phone")}
+        </div>
+        <div>
+          <h2>TV's</h2>
+          {renderProductByCategory("tv")}
+        </div>
+        <CategoryContainer />
       </div>
-      <div>
-        <h2>TV's</h2>
-        {renderProductByCategory("tv")}
-      </div>
-      <CategoryContainer />
-    </div>
+    </Context.Provider>
   )
 }
 
