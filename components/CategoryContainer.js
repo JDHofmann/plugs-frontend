@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 function CategoryContainer({products, title}){
 
     const renderProductItems = () => {
-        return products.map(fp => <ProductCard product={fp}/>)
+        return products.map(fp => <ProductCard key={fp.id} product={fp}/>)
     }
 
     return (

@@ -2,14 +2,15 @@
 export default function ProductCard({product}){
 
     const findLowestPrice = () => {
-        return product.skus.reduce((min, p) => p.price < min ? p.price : min, product.skus[0].price);
+        let prices = product.skus.map(s => s.price)
+        return Math.min(...prices);
     }
     return (
         <div 
             key={product.id}
             className="product-card"
         >
-            <h3><span>{product.brand} - </span>{product.name}</h3>
+            <h3><span style={{textTransform: "capitalize"}}>{product.brand} - </span>{product.name}</h3>
             <img style={{ width: "100px"}} src={product.frontimg}></img>
             <p>from {findLowestPrice()}$</p>
         </div>
