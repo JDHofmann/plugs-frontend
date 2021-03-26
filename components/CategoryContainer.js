@@ -1,11 +1,16 @@
-import withContext from "../withContext";
 
-function CategoryContainer(){
+function CategoryContainer({products, title}){
+
+    const renderProductItems = () => {
+        return products.map(fp => <p>{fp.name}</p>)
+    }
+
     return (
         <div>
-            Category Container
+            <h2>{title}</h2>
+            {renderProductItems()}
         </div>
     )
 }
 
-export default withContext(CategoryContainer);
+export default CategoryContainer;

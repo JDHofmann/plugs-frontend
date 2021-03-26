@@ -8,8 +8,9 @@ export default function Home({user, products}) {
 const [ cart, setCart ] = useState([{name: "testItem"}]);
 
   const renderProductByCategory = (category) => {
-    let filteredProducts = products.filter( p => p.category === category)
-    return filteredProducts.map(fp => <p>{fp.name}</p>)
+    // let filteredProducts = products.filter( p => p.category === category)
+    // return filteredProducts.map(fp => <p>{fp.name}</p>)
+    return products.filter( p => p.category === category)
   }
   
   return (
@@ -22,15 +23,12 @@ const [ cart, setCart ] = useState([{name: "testItem"}]);
       <div>
         <Header />
         <h1>Home</h1>
-        <div>
-          <h2>Phones</h2>
-          {renderProductByCategory("phone")}
-        </div>
-        <div>
-          <h2>TV's</h2>
-          {renderProductByCategory("tv")}
-        </div>
-        <CategoryContainer />
+        <CategoryContainer title="Phones" products={renderProductByCategory("phone")}/>
+        <CategoryContainer title="Tablets" products={renderProductByCategory("tablet")}/>
+        <CategoryContainer title="Laptops" products={renderProductByCategory("laptop")}/>
+        <CategoryContainer title="Smart Watches" products={renderProductByCategory("smart watch")}/>
+        <CategoryContainer title="TV's" products={renderProductByCategory("tv")}/>
+        <CategoryContainer title="Accessories" products={renderProductByCategory("accessory")}/>
       </div>
     </Context.Provider>
   )
