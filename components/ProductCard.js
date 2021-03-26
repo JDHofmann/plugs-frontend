@@ -1,3 +1,4 @@
+import Link from 'next/link'
 
 export default function ProductCard({product}){
 
@@ -6,13 +7,15 @@ export default function ProductCard({product}){
         return Math.min(...prices);
     }
     return (
-        <div 
+        <Link href={{pathname: `/product/${product.id}`}}>
+        <a 
             key={product.id}
             className="product-card"
         >
             <h3><span style={{textTransform: "capitalize"}}>{product.brand} - </span>{product.name}</h3>
             <img style={{ width: "100px"}} src={product.frontimg}></img>
             <p>from {findLowestPrice()}$</p>
-        </div>
+        </a>
+        </Link>
     )
 }
