@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Home({user, products}) {
 
-const [ cart, setCart ] = useState([]);
+const [ cart, setCart ] = useState([{name: "testItem"}]);
 
   const renderProductByCategory = (category) => {
     let filteredProducts = products.filter( p => p.category === category)
