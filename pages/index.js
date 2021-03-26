@@ -20,7 +20,7 @@ const [ cart, setCart ] = useState([]);
       setCart: setCart
       }}>
       <div>
-        <Header user={user}/>
+        <Header />
         <h1>Home</h1>
         <div>
           <h2>Phones</h2>
