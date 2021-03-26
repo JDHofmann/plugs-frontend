@@ -1,12 +1,13 @@
+import ProductCard from "./ProductCard";
 
 function CategoryContainer({products, title}){
 
     const renderProductItems = () => {
-        return products.map(fp => <p>{fp.name}</p>)
+        return products.map(fp => <ProductCard product={fp}/>)
     }
 
     return (
-        <div>
+        <div className="category-container">
             <h2>{title}</h2>
             {renderProductItems()}
         </div>
