@@ -1,23 +1,15 @@
 import CategoryContainer from "../components/CategoryContainer"
 import Header from "../components/header"
-import Context from "../Context";
-import { useState } from "react";
+import withContext from "../withContext";
 
-export default function Home({user, products}) {
+function Home({context}) {
 
-const [ cart, setCart ] = useState([{name: "testItem", id: "2"}]);
+  
 
   const renderProductByCategory = (category) => {
-    return products.filter( p => p.category === category)
+    return context.products.filter( p => p.category === category)
   }
-  
   return (
-    <Context.Provider value={{
-      user: user, 
-      products: products,
-      cart: cart,
-      setCart: setCart
-      }}>
       <div>
         <Header />
         <h1>Home</h1>
@@ -28,19 +20,7 @@ const [ cart, setCart ] = useState([{name: "testItem", id: "2"}]);
         <CategoryContainer title="TV's" products={renderProductByCategory("tv")}/>
         <CategoryContainer title="Accessories" products={renderProductByCategory("accessory")}/>
       </div>
-    </Context.Provider>
   )
 }
 
-export async function getStaticProps(){
-  const res1 = await fetch("http://localhost:3000/users/3")
-  const user = await res1.json();
-  const res2 = await fetch("http://localhost:3000/products")
-  const products = await res2.json()
-  return {
-    props: {
-      user,
-      products
-    }
-  }
-}
+export default withContext(Home);
