@@ -4,8 +4,6 @@ import withContext from "../withContext";
 
 function Home({context}) {
 
-  
-
   const renderProductByCategory = (category) => {
     return context.products.filter( p => p.category === category)
   }
