@@ -3,7 +3,7 @@ import Context from "../Context";
 import { useState, useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
-const [ cart, setCart ] = useState([{name: "testItem", id: "2"}]);
+const [ cart, setCart ] = useState([]);
 const [ user, setUser ] = useState([]);
 const [ products, setProducts ] = useState([]);
 
