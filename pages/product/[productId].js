@@ -14,8 +14,7 @@ function Product({ context }){
     const [ selectedOption, setSelectedOption ] = useState();
 
     const addToCart = () => {
-        console.log(selectedOption);
-        
+        context.setCart([...context.cart, selectedOption])
     }
 
     useEffect( () => {
