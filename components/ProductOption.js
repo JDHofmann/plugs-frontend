@@ -19,7 +19,9 @@ export default function ProductOption({productOptions, product, selectedOption, 
 
     return (
         <div>
-            <form onChange={handleSelectionChange}>
+            <form 
+                onSubmit={() => addToCart()}
+                onChange={handleSelectionChange}>
                 <fieldset>
                 <legend>{productOptions.name }</legend>
                 {renderOptionValues(productOptions)}

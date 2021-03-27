@@ -13,6 +13,10 @@ function Product({ context }){
     const [productOption, setProductOption] = useState();
     const [ selectedOption, setSelectedOption ] = useState();
 
+    const addToCart = () => {
+        console.log(selectedOption)
+    }
+
     useEffect( () => {
         let foundProduct = context.products.filter(p => p.id === parseInt(productId))
         setProduct(foundProduct[0])
@@ -31,6 +35,7 @@ function Product({ context }){
                 product={product}
                 selectedOption={selectedOption}
                 setSelectedOption={setSelectedOption}
+                addToCart={addToCart()}
             />
         </div>
         : null }
