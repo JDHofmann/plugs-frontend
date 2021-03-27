@@ -16,7 +16,13 @@ function Product({ context }){
     })
 
     const renderOptionValues = () => {
-        return product.product_options[0].product_option_values.map(po => <p><label><input type="radio"></input>{po.name}</label></p>);
+        return product.product_options[0].product_option_values.map(po => <p>
+            <input 
+                value={po.id} 
+                id={po.id}
+                name="selction"
+                type="radio"></input><label htmlFor={po.id}>{po.name}</label>
+            </p>);
     }
 
     const renderOption = () => {
@@ -26,6 +32,7 @@ function Product({ context }){
                 <legend>{product.product_options[0].name }</legend>
                 {renderOptionValues()}
                 </fieldset>
+                <button type="submit">Add to Cart</button>
             </form>
         )
         
