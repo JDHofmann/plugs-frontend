@@ -1,23 +1,46 @@
 import withContext from "../../withContext";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { useState, useEffect } from "react";
 
 function Product({ context }){
+
     const router = useRouter()
     // use the same naming convention as inside []'s for file
     const { productId } = router.query;
 
-    const findProduct = () => {
-      let product = context.products.filter(p => p.id === parseInt(productId))
-      console.log(product[0])
-      return product[0]
+    const [product, setProduct] = useState();
+
+    useEffect( () => {
+        let foundProduct = context.products.filter(p => p.id === parseInt(productId))
+        setProduct(foundProduct[0])
+    })
+
+    const renderOptionValues = () => {
+        return product.product_options[0].product_option_values.map(po => <p><label><input type="radio"></input>{po.name}</label></p>);
     }
-    
+
+    const renderOption = () => {
+        return (
+            <form>
+                <fieldset>
+                <legend>{product.product_options[0].name }</legend>
+                {renderOptionValues()}
+                </fieldset>
+            </form>
+        )
+        
+        // product.product_options.product_option_values.id 
+        // product.product_options.product_option_values.name
+    }
+
     return (
         <>
-        { context.products.length > 0 ? 
+        { product ? 
         <>
-        <h1>{findProduct().id}</h1>
-        <p>{findProduct().additional_specs}</p>
+            <h1><span style={{ textTransform: "capitalize" }}>{product.brand}</span> - {product.name}</h1>
+            <img style={{width: "100px"}} src={product.frontimg}></img>
+            <p>{product.additional_specs}</p>
+            {renderOption()}
         </>
         : null }
         </>
