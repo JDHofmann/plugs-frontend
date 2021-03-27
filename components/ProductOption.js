@@ -1,10 +1,15 @@
 import Prices from "./Prices";
 
-export default function ProductOption({productOptions, product, selectedOption, setSelectedOption}){
+export default function ProductOption({productOptions, product, selectedOption, setSelectedOption, addToCart}){
 
     const handleSelectionChange = (e) => {
         let selected = parseInt(e.target.value)
         setSelectedOption(selected)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addToCart();
     }
 
     const renderOptionValues = (productOptions) => {
@@ -20,7 +25,7 @@ export default function ProductOption({productOptions, product, selectedOption, 
     return (
         <div>
             <form 
-                onSubmit={() => addToCart()}
+                onSubmit={handleSubmit}
                 onChange={handleSelectionChange}>
                 <fieldset>
                 <legend>{productOptions.name }</legend>
