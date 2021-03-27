@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Prices from "./Prices";
 
-export default function ProductOption({productOptions, product}){
+export default function ProductOption({productOptions, product, selectedOption, setSelectedOption}){
 
-    const [ selectedOption, setSelectedOption ] = useState();
+    // const [ selectedOption, setSelectedOption ] = useState();
 
     const handleSelectionChange = (e) => {
         let selected = parseInt(e.target.value)
