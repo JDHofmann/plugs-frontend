@@ -2,6 +2,7 @@ import withContext from "../../withContext";
 import { useRouter } from 'next/router';
 import { useState, useEffect } from "react";
 import ProductOption from "../../components/ProductOption";
+import Layout from "../../components/Layout";
 
 function Product({ context }){
 
@@ -23,23 +24,25 @@ function Product({ context }){
     })
 
     return (
-        <>
-        { product ? 
-        <div>
-            <h1><span style={{ textTransform: "capitalize" }}>{product.brand}</span> - {product.name}</h1>
-            <img style={{width: "100px"}} src={product.frontimg}></img>
-            <p>{product.additional_specs}</p>
-            <ProductOption 
-                productOptions={product.product_options[0]}
-                setProductOption={setProductOption}
-                product={product}
-                selectedOption={selectedOption}
-                setSelectedOption={setSelectedOption}
-                addToCart={addToCart}
-            />
-        </div>
-        : null }
-        </>
+        <Layout>
+            <>
+            { product ? 
+            <div>
+                <h1><span style={{ textTransform: "capitalize" }}>{product.brand}</span> - {product.name}</h1>
+                <img style={{width: "100px"}} src={product.frontimg}></img>
+                <p>{product.additional_specs}</p>
+                <ProductOption 
+                    productOptions={product.product_options[0]}
+                    setProductOption={setProductOption}
+                    product={product}
+                    selectedOption={selectedOption}
+                    setSelectedOption={setSelectedOption}
+                    addToCart={addToCart}
+                />
+            </div>
+            : null }
+            </>
+        </Layout>
     )
 }
 

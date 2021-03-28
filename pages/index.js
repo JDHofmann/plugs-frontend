@@ -1,5 +1,6 @@
 import CategoryContainer from "../components/CategoryContainer"
-import Header from "../components/header"
+import Header from "../components/Header"
+import Layout from "../components/Layout";
 import withContext from "../withContext";
 
 function Home({context}) {
@@ -8,8 +9,8 @@ function Home({context}) {
     return context.products.filter( p => p.category === category)
   }
   return (
+    <Layout>
       <div>
-        <Header />
         <h1>Home</h1>
         <CategoryContainer title="Phones" products={renderProductByCategory("phone")}/>
         <CategoryContainer title="Tablets" products={renderProductByCategory("tablet")}/>
@@ -18,6 +19,7 @@ function Home({context}) {
         <CategoryContainer title="TV's" products={renderProductByCategory("tv")}/>
         <CategoryContainer title="Accessories" products={renderProductByCategory("accessory")}/>
       </div>
+    </Layout>
   )
 }
 

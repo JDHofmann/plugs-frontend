@@ -3,7 +3,7 @@ import withContext from "../withContext";
 function CartPreview({context}){
 
     const renderCartItems = () => {
-        return context.cart.map(i => <div key={i.id}>{i.name}</div>)
+        return context.cart.map(i => <div key={i}>{i}</div>)
     }
 
     return (
