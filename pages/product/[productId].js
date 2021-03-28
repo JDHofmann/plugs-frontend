@@ -14,7 +14,7 @@ function Product({ context }){
     const [ selectedOption, setSelectedOption ] = useState();
     const [quantity, setQuantity ] = useState("1");
 
-    const addToCart = async ( itemObj ) => {
+    const addToCart = ( itemObj ) => {
         let currentCart = context.cart;
         let newCart;
         if (context.cart.length < 1){
@@ -31,8 +31,8 @@ function Product({ context }){
         else {
             newCart = [...currentCart, itemObj]
         }
-        await context.setCart(newCart);
-        await localStorage.setItem('cart', JSON.stringify([...newCart]));
+        context.setCart(newCart);
+        localStorage.setItem('cart', JSON.stringify([...newCart]));
     }
 
     useEffect( () => {
