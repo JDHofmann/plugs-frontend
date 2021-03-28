@@ -26,6 +26,7 @@ export default function ProductForm(
         e.preventDefault();
         addToCart({
             skuId: selectedOption,
+            productId: product.id,
             quantity: quantity
         });
     }
