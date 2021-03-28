@@ -15,25 +15,20 @@ function Product({ context }){
     const [quantity, setQuantity ] = useState("1");
 
     const addToCart = async ( itemObj ) => {
-        console.log(itemObj);
         let currentCart = context.cart;
         let newCart;
         if (context.cart.length < 1){
             newCart = [itemObj];
-            // context.setCart(newCart);
         }
         else if ( context.cart.some(obj => obj.skuId === itemObj.skuId) ) {
-            // let cart = context.cart
             for(let i = 0; i < currentCart.length; i++){
                 if (currentCart[i].skuId === itemObj.skuId) { 
                     currentCart[i].quantity = parseInt(currentCart[i].quantity) + parseInt(itemObj.quantity);
-                    // context.setCart(cart);
                     newCart = currentCart;
                 }
             }
         }
         else {
-            // context.setCart([...context.cart, itemObj]);
             newCart = [...currentCart, itemObj]
         }
         await context.setCart(newCart);
