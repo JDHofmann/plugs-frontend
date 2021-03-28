@@ -19,22 +19,25 @@ function Product({ context }){
         let currentCart = context.cart;
         let newCart;
         if (context.cart.length < 1){
-            let newCart = [itemObj];
-            context.setCart(newCart);
+            newCart = [itemObj];
+            // context.setCart(newCart);
         }
         else if ( context.cart.some(obj => obj.skuId === itemObj.skuId) ) {
-            let cart = context.cart
-            for(let i = 0; i < cart.length; i++){
-                if (cart[i].skuId === itemObj.skuId) { 
-                    cart[i].quantity = parseInt(cart[i].quantity) + parseInt(itemObj.quantity);
-                    context.setCart(cart);
+            // let cart = context.cart
+            for(let i = 0; i < currentCart.length; i++){
+                if (currentCart[i].skuId === itemObj.skuId) { 
+                    currentCart[i].quantity = parseInt(currentCart[i].quantity) + parseInt(itemObj.quantity);
+                    // context.setCart(cart);
+                    newCart = currentCart;
                 }
             }
         }
         else {
-            context.setCart([...context.cart, itemObj]);
+            // context.setCart([...context.cart, itemObj]);
+            newCart = [...currentCart, itemObj]
         }
-        await localStorage.setItem('cart', JSON.stringify([...context.cart]));
+        await context.setCart(newCart);
+        await localStorage.setItem('cart', JSON.stringify([...newCart]));
     }
 
     useEffect( () => {
