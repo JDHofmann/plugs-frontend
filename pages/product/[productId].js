@@ -22,20 +22,13 @@ function Product({ context }){
         }
         else if ( context.cart.some(obj => obj.skuId === itemObj.skuId) ) {
             console.log("need to add: ", itemObj.quantity)
+            // loop through cart here
         }
         
         else {
             context.setCart([...context.cart, itemObj]);
             localStorage.setItem('cart', JSON.stringify([...context.cart, itemObj]));
         }
-        // let newCart = [...currentCart, itemObj];
-        // context.setCart([...context.cart, itemObj]);
-        // await context.setCart([...context.cart, itemObj]);
-        // await localStorage.setItem("cart", JSON.stringify([...context.cart, itemObj]));
-
-
-        // 
-        // localStorage.setItem("cart", JSON.stringify([...context.cart, selectedOption]))
     }
 
     useEffect( () => {
