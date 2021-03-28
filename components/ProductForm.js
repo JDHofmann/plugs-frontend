@@ -1,15 +1,33 @@
 import Prices from "./Prices";
 
-export default function ProductOption({productOptions, product, selectedOption, setSelectedOption, addToCart}){
+export default function ProductForm(
+    {
+        productOptions,
+        product, 
+        selectedOption, 
+        setSelectedOption, 
+        addToCart,
+        quantity,
+        setQuantity
+    }
+    ){
 
     const handleSelectionChange = (e) => {
-        let selected = parseInt(e.target.value)
-        setSelectedOption(selected)
+        let optionSelected = parseInt(e.target.value)
+        setSelectedOption(optionSelected)
+    }
+
+    const handleQuantityChange = (e) => {
+        let quantitySelected = parseInt(e.target.value)
+        setQuantity(quantitySelected)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addToCart();
+        addToCart({
+            skuId: selectedOption,
+            quantity: quantity
+        });
     }
 
     const renderOptionValues = (productOptions) => {
@@ -26,11 +44,20 @@ export default function ProductOption({productOptions, product, selectedOption, 
         <div>
             <form 
                 onSubmit={handleSubmit}
-                onChange={handleSelectionChange}>
-                <fieldset>
+                >
+                <fieldset onChange={handleSelectionChange}>
                 <legend>{productOptions.name }</legend>
                 {renderOptionValues(productOptions)}
                 </fieldset>
+                <input 
+                    id="qty"
+                    type="number"
+                    min="1"
+                    max="20"
+                    value={quantity}
+                    onChange={handleQuantityChange} 
+                />
+                <label htmlFor="qty">Quantity</label>
                 <button type="submit">Add to Cart</button>
             </form>
             <Prices 

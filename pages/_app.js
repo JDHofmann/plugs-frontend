@@ -15,6 +15,9 @@ useEffect( async () => {
   const products = await res2.json();
   setUser(user);
   setProducts(products);
+  localStorage.getItem('cart').length < 1 ? 
+  setCart([])
+  :
   setCart(JSON.parse(localStorage.getItem('cart')))
 }, [])
 

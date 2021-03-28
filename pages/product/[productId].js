@@ -1,7 +1,7 @@
 import withContext from "../../withContext";
 import { useRouter } from 'next/router';
 import { useState, useEffect } from "react";
-import ProductOption from "../../components/ProductOption";
+import ProductForm from "../../components/ProductForm";
 
 function Product({ context }){
 
@@ -12,10 +12,30 @@ function Product({ context }){
     const [product, setProduct] = useState();
     const [productOption, setProductOption] = useState();
     const [ selectedOption, setSelectedOption ] = useState();
+    const [quantity, setQuantity ] = useState("1");
 
-    const addToCart = async () => {
-        await context.setCart([...context.cart, selectedOption]);
-        await localStorage.setItem("cart", JSON.stringify([...context.cart, selectedOption]));
+    const addToCart = async ( itemObj ) => {
+        console.log(itemObj);
+        if (context.cart.length < 1){
+            let newCart = [itemObj];
+            context.setCart(newCart);
+        }
+        else if ( context.cart.some(obj => obj.skuId === itemObj.skuId) ) {
+            console.log("need to add: ", itemObj.quantity)
+        }
+        
+        else {
+            context.setCart([...context.cart, itemObj]);
+            localStorage.setItem('cart', JSON.stringify([...context.cart, itemObj]));
+        }
+        // let newCart = [...currentCart, itemObj];
+        // context.setCart([...context.cart, itemObj]);
+        // await context.setCart([...context.cart, itemObj]);
+        // await localStorage.setItem("cart", JSON.stringify([...context.cart, itemObj]));
+
+
+        // 
+        // localStorage.setItem("cart", JSON.stringify([...context.cart, selectedOption]))
     }
 
     useEffect( () => {
@@ -30,13 +50,15 @@ function Product({ context }){
             <h1><span style={{ textTransform: "capitalize" }}>{product.brand}</span> - {product.name}</h1>
             <img style={{width: "100px"}} src={product.frontimg}></img>
             <p>{product.additional_specs}</p>
-            <ProductOption 
+            <ProductForm 
                 productOptions={product.product_options[0]}
                 setProductOption={setProductOption}
                 product={product}
                 selectedOption={selectedOption}
                 setSelectedOption={setSelectedOption}
                 addToCart={addToCart}
+                quantity={quantity}
+                setQuantity={setQuantity}
             />
         </div>
         : null }
