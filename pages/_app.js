@@ -26,7 +26,7 @@ useEffect( async () => {
       user: user,
       setUser: setUser, 
       products: products,
-      setProducts: setProducts,
+      setProducts: setProducts, 
       cart: cart,
       setCart: setCart
       }}>

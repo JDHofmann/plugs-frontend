@@ -16,19 +16,25 @@ function Product({ context }){
 
     const addToCart = async ( itemObj ) => {
         console.log(itemObj);
+        let currentCart = context.cart;
+        let newCart;
         if (context.cart.length < 1){
             let newCart = [itemObj];
             context.setCart(newCart);
         }
         else if ( context.cart.some(obj => obj.skuId === itemObj.skuId) ) {
-            console.log("need to add: ", itemObj.quantity)
-            // loop through cart here
+            let cart = context.cart
+            for(let i = 0; i < cart.length; i++){
+                if (cart[i].skuId === itemObj.skuId) { 
+                    cart[i].quantity = parseInt(cart[i].quantity) + parseInt(itemObj.quantity);
+                    context.setCart(cart);
+                }
+            }
         }
-        
         else {
             context.setCart([...context.cart, itemObj]);
-            localStorage.setItem('cart', JSON.stringify([...context.cart, itemObj]));
         }
+        await localStorage.setItem('cart', JSON.stringify([...context.cart]));
     }
 
     useEffect( () => {
