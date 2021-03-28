@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import Context from "../Context";
 import { useState, useEffect } from "react";
+import Layout from '../components/Layout';
 
 function MyApp({ Component, pageProps }) {
 const [ cart, setCart ] = useState([]);
@@ -25,7 +26,10 @@ useEffect( async () => {
       cart: cart,
       setCart: setCart
       }}>
-    <Component {...pageProps} />
+      <Layout>
+
+        <Component {...pageProps} />
+      </Layout>
     </Context.Provider>
   )
 }
