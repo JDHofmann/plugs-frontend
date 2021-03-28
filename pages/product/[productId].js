@@ -13,11 +13,9 @@ function Product({ context }){
     const [productOption, setProductOption] = useState();
     const [ selectedOption, setSelectedOption ] = useState();
 
-    const addToCart = () => {
-        context.setCart([...context.cart, selectedOption]);
-        console.log("context cart", context.cart)
-        localStorage.setItem("cart", JSON.stringify([...context.cart, selectedOption]));
-        console.log("local storage cart", localStorage.getItem("cart"))
+    const addToCart = async () => {
+        await context.setCart([...context.cart, selectedOption]);
+        await localStorage.setItem("cart", JSON.stringify([...context.cart, selectedOption]));
     }
 
     useEffect( () => {
