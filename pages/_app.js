@@ -15,6 +15,7 @@ useEffect( async () => {
   const products = await res2.json();
   setUser(user);
   setProducts(products);
+  setCart([...localStorage.getItem('cart').split(",")])
 }, [])
 
   return (
