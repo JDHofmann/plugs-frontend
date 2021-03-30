@@ -30,11 +30,6 @@ a {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   list-style-type: none;
-  color: #202020;
-}
-
-.selected {
-  color: #ff9966;
 }
 
 header {
@@ -148,5 +143,9 @@ footer div {
 footer h4, footer span {
   padding: 35px 0;
   display: block;
+}
+
+.selected {
+  color: #ff9966;
 }
 /*# sourceMappingURL=style.css.map */

@@ -24,7 +24,7 @@ function Header({context}){
                 <span></span>
                 <span></span>
             </button>
-            <Menu active={menuOpen ? "true" : "false"} />
+            <Menu menuOpen={menuOpen} />
             {/* <h1>HEADER</h1>
             <p>Welcome Back: {context.user.username}</p>
             <Link href="/cart"><a>Cart</a></Link>
