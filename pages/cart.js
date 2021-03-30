@@ -1,3 +1,4 @@
+import Layout from "../components/Layout";
 import withContext from "../withContext";
 
 function Cart({context}) {
@@ -5,10 +6,12 @@ function Cart({context}) {
         return context.cart.map(i => <div key={i}>{i}</div>)
     }
     return (
+        <Layout>
         <div>
             <h1>Cart</h1>
-            {renderCartItems()}
+            {/* {renderCartItems()} */}
         </div>
+        </Layout>
     )
 }
 

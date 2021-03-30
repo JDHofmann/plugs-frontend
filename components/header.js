@@ -1,15 +1,17 @@
 import Link from "next/link";
 import withContext from "../withContext";
 import CartPreview from "./CartPreview";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Menu from "./Menu";
 
 function Header({context}){
 
     const [ menuOpen, setMenuOpen ] = useState(false)
 
     const handleMenuClick = () => {
-        menuOpen ? 
-        setMenuOpen(false) : setMenuOpen(true)
+        setMenuOpen(!menuOpen)
+        // menuOpen ? 
+        // setMenuOpen(false) : setMenuOpen(true)
     }
 
     return (
@@ -22,13 +24,7 @@ function Header({context}){
                 <span></span>
                 <span></span>
             </button>
-            <nav class={ menuOpen ? "menu menu-active" : "menu"}>
-                <ul>
-                    <li>One</li>
-                    <li>Two</li>
-                    <li>Three</li>
-                </ul>
-            </nav>
+            <Menu active={menuOpen ? "true" : "false"} />
             {/* <h1>HEADER</h1>
             <p>Welcome Back: {context.user.username}</p>
             <Link href="/cart"><a>Cart</a></Link>

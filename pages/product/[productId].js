@@ -2,6 +2,7 @@ import withContext from "../../withContext";
 import { useRouter } from 'next/router';
 import { useState, useEffect } from "react";
 import ProductForm from "../../components/ProductForm";
+import Layout from "../../components/Layout";
 
 function Product({ context }){
 
@@ -41,7 +42,7 @@ function Product({ context }){
     })
 
     return (
-        <>
+        <Layout>
         { product ? 
         <div>
             <h1><span style={{ textTransform: "capitalize" }}>{product.brand}</span> - {product.name}</h1>
@@ -59,7 +60,7 @@ function Product({ context }){
             />
         </div>
         : null }
-        </>
+        </Layout>
     )
 }
 
