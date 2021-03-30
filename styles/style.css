@@ -38,7 +38,6 @@ a {
 }
 
 header {
-  background: #eeeecc;
   position: relative;
 }
 
@@ -57,8 +56,8 @@ header .burger-btn span {
   display: block;
   position: absolute;
   width: 30px;
-  height: 4px;
-  background: #000000;
+  height: 3px;
+  background: #303030;
   border-radius: 2px;
   margin: 5px;
   -webkit-transition: .65s;
@@ -114,13 +113,13 @@ header .active span:nth-child(2) {
 }
 
 header .active span:nth-child(3) {
-  -webkit-transform: rotate(-0.125turn);
-          transform: rotate(-0.125turn);
+  -webkit-transform: rotate(-0.625turn);
+          transform: rotate(-0.625turn);
   bottom: 13px;
 }
 
 header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
-  left: -100px;
+  left: -200px;
 }
 
 header .menu {
@@ -135,6 +134,7 @@ header .menu {
 
 header .menu-active {
   height: 100%;
+  height: 50vh;
 }
 
 footer {
