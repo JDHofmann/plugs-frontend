@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Footer from './Footer'
 import Header from './Header'
 
 export default function Layout({ children, pageTitle, ...props }) {
@@ -12,7 +13,7 @@ export default function Layout({ children, pageTitle, ...props }) {
                 <Header />
                 <div className="content">{children}</div>
             </section>
-            <footer><p>Built by JDBH</p></footer>
+            <Footer />
         </>
     )
 }

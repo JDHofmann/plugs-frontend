@@ -1,0 +1,152 @@
+html,
+body,
+a,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+footer,
+header,
+nav,
+button {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style-type: none;
+  color: #202020;
+}
+
+.selected {
+  color: #ff9966;
+}
+
+header {
+  background: #eeeecc;
+  position: relative;
+}
+
+header .burger-btn {
+  background: #ffffff;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 20px;
+  z-index: 1000;
+  position: relative;
+}
+
+header .burger-btn span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background: #000000;
+  border-radius: 2px;
+  margin: 5px;
+  -webkit-transition: .65s;
+  transition: .65s;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .burger-btn span:nth-child(1) {
+  top: 0;
+}
+
+header .burger-btn span:nth-child(2) {
+  width: 20px;
+  left: 0;
+  top: 13px;
+}
+
+header .burger-btn span:nth-child(3) {
+  bottom: 0;
+}
+
+header .burger-btn:hover, header .burger-btn:focus {
+  -webkit-transition: .65s;
+  transition: .65s;
+}
+
+header .burger-btn:hover span:nth-child(2), header .burger-btn:focus span:nth-child(2) {
+  left: 10px;
+}
+
+header .active {
+  width: 40px;
+  display: block;
+}
+
+header .active span:nth-child(1) {
+  -webkit-transform: rotate(0.125turn);
+          transform: rotate(0.125turn);
+  top: 13px;
+}
+
+header .active span:nth-child(2) {
+  left: -100px;
+}
+
+header .active span:nth-child(3) {
+  -webkit-transform: rotate(-0.125turn);
+          transform: rotate(-0.125turn);
+  bottom: 13px;
+}
+
+header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
+  left: -100px;
+}
+
+header .menu {
+  background: #ffaaaa;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  -webkit-transition: .65s;
+  transition: .65s;
+}
+
+header .menu-active {
+  height: 100%;
+}
+
+footer {
+  background: #ff9966;
+}
+
+footer div {
+  padding: 20px;
+}
+
+footer h4, footer span {
+  padding: 35px 0;
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */
