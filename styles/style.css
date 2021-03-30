@@ -145,6 +145,19 @@ footer h4, footer span {
   display: block;
 }
 
+.content {
+  min-height: calc(100vh - 200px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .selected {
   color: #ff9966;
 }
