@@ -7,8 +7,8 @@ export default function Menu({menuOpen}){
             role="main menu"
         >
             <ul>
-                <li className="main-menu-item"><h3>Products</h3>
-                    <ul>
+                <li className="main-menu-item shop"><h3>Shop</h3>
+                    <ul className="sub-list">
                         <li><Link href="/"><a>Phones</a></Link></li>
                         <li><Link href="/"><a>Tablets</a></Link></li>
                         <li><Link href="/"><a>Laptops</a></Link></li>

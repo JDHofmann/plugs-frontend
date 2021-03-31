@@ -6,14 +6,29 @@
     position: absolute;
     transition: .65s;
     ul {
-        
+        // border: 1px solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 20px;
+        li {
+            text-align: center;
+            padding: 10px 0;
+        }
+    }
+    .main-menu-item {
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .sub-list {
+        li {
+            font-weight: 400;
+            font-size: 18px;
+        }
     }
 }
+
 .main-menu-active {
     height: 100%;
-    height: 50vh;
-}
-.main-menu-item {
-
+    height: 100vh;
 }
