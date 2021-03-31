@@ -6,27 +6,3 @@
     display: grid;
     grid-template-columns: 50px auto 50px 50px;
 }
-.cart-item {
-    display: grid;
-    grid-template-columns: 50px auto 50px 50px;
-}
-.delete-item {
-    background: none;
-    border: none;
-    transition: .3s;
-    &:hover, &:focus {
-    }
-}
-
-.item-description {
-    display: grid;
-    grid-template-columns: 50px auto;
-    align-items: center;
-    img {
-        width: 40px;
-        justify-self: left;
-    }
-    .description-text {
-        // justify-self: center;
-    }
-}
