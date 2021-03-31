@@ -21,6 +21,7 @@ function Header({context}){
             <button 
             class={ menuOpen ? "burger-btn active" : "burger-btn"}
             onClick={handleMenuClick}
+            aria-labelledby="open-main-menu"
             >
                 <span></span>
                 <span></span>
