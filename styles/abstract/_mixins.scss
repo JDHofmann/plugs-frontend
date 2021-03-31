@@ -1,0 +1,13 @@
+@mixin cartGird(){
+    display: grid;
+    grid-template-columns: 40px auto 50px 50px;
+}
+
+@mixin hoverFocus(){
+
+    outline: none;
+    &:hover, &:focus {
+        outline-offset: 3px;
+        outline: 2px solid $dark-3;
+    }
+}

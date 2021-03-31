@@ -2,7 +2,38 @@
     width: 100%;
     
 }
+
+.cart-header {
+    margin: 20px 0 40px;
+}
+
 .cart-headers {
-    display: grid;
-    grid-template-columns: 50px auto 50px 50px;
+    @include cartGird();
+    margin: 20px 0;
+    h2 {
+        justify-self: center;
+        font-size: 20px;
+        font-weight: 200;
+    }
+}
+
+.total {
+    text-align: right;
+    margin:  40px 20px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.checkout {
+    background: $dark-3;
+    color: $light-0;
+    border: none;
+    outline: none;
+    width: 335px;
+    height: 40px;
+    display: block;
+    margin: 40px auto;
+    font-size: 16px;
+    letter-spacing: 2px;
+    @include hoverFocus();
 }

@@ -17,8 +17,12 @@ function CartItem({item, context}) {
                     <img src={findProductById(item.productId).frontimg}/>
                     <p className="description-text">{findProductById(item.productId).name}</p>
                 </div>
-                <input type="number" min="0" aria-labelledby="quantity-header"/>
-                <div className="item-total">
+                <input 
+                    className="item-quantity"
+                    type="number" min="0" aria-labelledby="quantity-header"
+                />
+                
+                <div className="item-price">
                     <span></span>
                     <span className="clipped">dollars</span>
                 </div>

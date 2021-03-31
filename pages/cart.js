@@ -11,7 +11,7 @@ function Cart({context}) {
     return (
         <Layout>
             <div>
-                <h2>Shopping Cart</h2>
+                <h1 className="cart-header">Shopping Cart</h1>
                 <div className="cart">
                     <caption className="clipped">
                         <span>Shopping cart, total</span>
@@ -19,14 +19,19 @@ function Cart({context}) {
                         <span>dollars</span>
                     </caption>
                     <div className="cart-headers">
-                        <h3>Item</h3>
+                        <h2>Item</h2>
                         <span></span>
-                        <h3>Qty</h3>
-                        <h3>Price</h3>
+                        <h2>Qty</h2>
+                        <h2>Price</h2>
                     </div>
                     <ul className="cart-item-list">
                         {renderCartItems()} 
                     </ul>
+                    <div className="total">
+                        <span>Total</span>
+                        <span>{}</span>
+                    </div>
+                    <button className="checkout">Checkout</button>
                 </div>
             </div>
         </Layout>

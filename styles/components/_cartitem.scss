@@ -1,13 +1,16 @@
 .cart-item {
-    display: grid;
-    grid-template-columns: 50px auto 50px 50px;
+    @include cartGird();
+    align-items: center;
+    margin: 40px 0;
 }
 .delete-item {
     background: none;
     border: none;
-    transition: .3s;
-    &:hover, &:focus {
-    }
+    outline: none;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    @include hoverFocus();
 }
 
 .item-description {
@@ -16,9 +19,20 @@
     align-items: center;
     img {
         width: 40px;
+        margin: auto;
         justify-self: left;
     }
     .description-text {
+        margin: 0 20px;
         // justify-self: center;
     }
+}
+.item-quantity {
+    width: 40px;
+    height: 40px;
+    justify-self: center;
+    @include hoverFocus();
+}
+.item-price {
+    justify-self: center;
 }

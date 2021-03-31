@@ -35,15 +35,27 @@ a {
 .cart-item {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px auto 50px 50px;
-      grid-template-columns: 50px auto 50px 50px;
+  -ms-grid-columns: 40px auto 50px 50px;
+      grid-template-columns: 40px auto 50px 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px 0;
 }
 
 .delete-item {
   background: none;
   border: none;
-  -webkit-transition: .3s;
-  transition: .3s;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  outline: none;
+}
+
+.delete-item:hover, .delete-item:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
 }
 
 .item-description {
@@ -58,8 +70,31 @@ a {
 
 .item-description img {
   width: 40px;
+  margin: auto;
   -ms-grid-column-align: left;
       justify-self: left;
+}
+
+.item-description .description-text {
+  margin: 0 20px;
+}
+
+.item-quantity {
+  width: 40px;
+  height: 40px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  outline: none;
+}
+
+.item-quantity:hover, .item-quantity:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
+}
+
+.item-price {
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 header {
@@ -76,6 +111,12 @@ header .burger-btn {
   margin: 20px;
   z-index: 1000;
   position: relative;
+  outline: none;
+}
+
+header .burger-btn:hover, header .burger-btn:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
 }
 
 header .burger-btn span {
@@ -153,6 +194,7 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
   overflow: hidden;
   width: 100%;
   height: 0;
+  display: none;
   position: absolute;
   -webkit-transition: .65s;
   transition: .65s;
@@ -191,6 +233,7 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
   height: auto;
   min-height: 100vh;
   overflow: scroll;
+  display: block;
 }
 
 footer {
@@ -220,11 +263,49 @@ footer span {
   width: 100%;
 }
 
+.cart-header {
+  margin: 20px 0 40px;
+}
+
 .cart-headers {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px auto 50px 50px;
-      grid-template-columns: 50px auto 50px 50px;
+  -ms-grid-columns: 40px auto 50px 50px;
+      grid-template-columns: 40px auto 50px 50px;
+  margin: 20px 0;
+}
+
+.cart-headers h2 {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.total {
+  text-align: right;
+  margin: 40px 20px;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.checkout {
+  background: #303030;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  width: 335px;
+  height: 40px;
+  display: block;
+  margin: 40px auto;
+  font-size: 16px;
+  letter-spacing: 2px;
+  outline: none;
+}
+
+.checkout:hover, .checkout:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
 }
 
 .content {
