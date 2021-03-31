@@ -3,8 +3,16 @@ footer {
     div {
         padding: 20px;
     }
-    h4, span {
+    h4 {
+        padding: 35px 0;
+        font-size: 17px;
+    } 
+    .address {
+        font-size: 15px;
+    }
+    span {
         padding: 35px 0;
         display: block;
+        font-size: 15px;
     }
 }

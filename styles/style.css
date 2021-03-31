@@ -171,9 +171,19 @@ footer div {
   padding: 20px;
 }
 
-footer h4, footer span {
+footer h4 {
+  padding: 35px 0;
+  font-size: 17px;
+}
+
+footer .address {
+  font-size: 15px;
+}
+
+footer span {
   padding: 35px 0;
   display: block;
+  font-size: 15px;
 }
 
 .content {
