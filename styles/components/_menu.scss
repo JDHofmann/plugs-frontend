@@ -1,12 +1,11 @@
 .main-menu {
-    background: #ffaaaa;
+    background: $light-1;
     overflow: hidden;
     width: 100%;
     height: 0;
     position: absolute;
     transition: .65s;
     ul {
-        // border: 1px solid;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -29,6 +28,7 @@
 }
 
 .main-menu-active {
-    height: 100%;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    overflow: scroll;
 }

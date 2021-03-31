@@ -9,9 +9,11 @@ function Header({context}){
     const [ menuOpen, setMenuOpen ] = useState(false)
 
     const handleMenuClick = () => {
-        setMenuOpen(!menuOpen)
-        // menuOpen ? 
-        // setMenuOpen(false) : setMenuOpen(true)
+        // set the scroll lock before opening the menu
+        let body = document.querySelector('.content');
+        menuOpen ? 
+        body.style.position = "static" :  body.style.position = "fixed"
+        setMenuOpen(!menuOpen);
     }
 
     return (
