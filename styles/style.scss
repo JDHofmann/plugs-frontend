@@ -9,13 +9,28 @@
     'components/menu',
     'components/footer';
 
+@import
+    'pages/cart';
+
 .content {
     min-height: calc(100vh - 200px);
     display: flex;
     align-items: center;
     justify-content: center;
+    width: clamp(355px, 80vw, 800px);
+    margin: auto;
+    & > * {
+        width: 100%;
+    }
 }
 
 .selected {
   color: $brand;
+}
+
+.clipped {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    overflow: hidden;
+    width: 0;
 }
