@@ -17,6 +17,7 @@ function Header({context}){
     }
 
     return (
+        <>
         <header>
             <button 
             class={ menuOpen ? "burger-btn active" : "burger-btn"}
@@ -27,13 +28,23 @@ function Header({context}){
                 <span></span>
                 <span></span>
             </button>
-            <Menu menuOpen={menuOpen} />
+            <div className="site-title">
+                <Link href="/"><a>C<span>&</span>G</a></Link>
+            </div>
+            <div className="header-cart">
+                <img className="cart-vector" src="/shopping-cart-vector.png"></img>
+                {context.cart.length > 0 ? 
+                <span className="cart-count">{context.cart.length}</span>
+                : null }
+            </div>
             {/* <h1>HEADER</h1>
             <p>Welcome Back: {context.user.username}</p>
             <Link href="/cart"><a>Cart</a></Link>
             <Link href="/"><a>Home</a></Link>
-            <CartPreview /> */}
+        <CartPreview /> */}
         </header>
+        <Menu menuOpen={menuOpen} />
+        </>
     )
 }
 

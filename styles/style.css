@@ -100,6 +100,14 @@ a {
 header {
   position: relative;
   z-index: 100;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
 }
 
 header .burger-btn {
@@ -189,6 +197,54 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
   left: -200px;
 }
 
+.site-title {
+  font-size: 24px;
+}
+
+.site-title span {
+  font-size: 16px;
+}
+
+.header-cart {
+  width: 40px;
+  height: 40px;
+  margin: 20px;
+  z-index: 1000;
+  outline: none;
+  position: relative;
+}
+
+.header-cart:hover, .header-cart:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
+}
+
+.cart-vector {
+  width: 30px;
+  margin: 5px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #e00000;
+  color: #ffffff;
+  font-size: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .main-menu {
   background: #f0f0f0;
   overflow: hidden;
@@ -198,6 +254,7 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
   position: absolute;
   -webkit-transition: .65s;
   transition: .65s;
+  z-index: 100;
 }
 
 .main-menu ul {
