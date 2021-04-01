@@ -286,13 +286,13 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
 .main-menu {
   background: #f0f0f0;
   overflow: hidden;
-  width: 100%;
+  width: 0;
   height: auto;
   min-height: 100vh;
   position: absolute;
-  left: -1000px;
-  -webkit-transition: .65s;
-  transition: .65s;
+  left: -1px;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
   z-index: 100;
 }
 
@@ -327,8 +327,7 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
 }
 
 .main-menu-active {
-  height: auto;
-  min-height: 100vh;
+  width: 100%;
   overflow: scroll;
   left: 0;
 }
@@ -339,6 +338,7 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
 
 footer {
   background: #ff9966;
+  margin-top: 40px;
 }
 
 footer div {
