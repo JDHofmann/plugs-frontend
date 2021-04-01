@@ -16,14 +16,14 @@ function Header({context}){
         body.style.position = "static" :  body.style.position = "fixed"
     }
 
-    const handleMenuClick = () => {
-        // if cartPreview is open, close it
+    const handleMenuToggle = () => {
+        cartPreview ? setCartPreview(false) : null
         lockScroll();
         setMenuOpen(!menuOpen);
     }
 
     const handleCartPreviewClick = () => {
-        // if menu is open close menu
+        menuOpen ? handleMenuToggle() : null
         setCartPreview(!cartPreview)
     }
 
@@ -32,7 +32,7 @@ function Header({context}){
         <header>
             <button 
             class={ menuOpen ? "burger-btn active" : "burger-btn"}
-            onClick={handleMenuClick}
+            onClick={handleMenuToggle}
             aria-labelledby="open-main-menu"
             >
                 <span></span>
