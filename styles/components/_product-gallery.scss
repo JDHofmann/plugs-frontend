@@ -1,0 +1,27 @@
+.product-image-gallery {
+    margin: 40px auto;
+    padding: 0 40px;
+    @media (min-width: 769px){
+        display: flex;
+    }
+    .product-images {
+        width: 275px;
+        max-width: 100%;
+        display: block;
+        margin: auto;
+        img {
+            width: 100%;
+        }
+    }
+}
+.product-thumbnails {
+    display: none;
+    @media (min-width: 769px){
+        display: block;
+    }
+    .product-thumbnail {
+        width: 75px;
+        background: #ff0000;
+        height: 75px;
+    }
+}

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from "react";
 import ProductForm from "../../components/ProductForm";
 import Layout from "../../components/Layout";
+import ProductGallery from "../../components/ProductGallery";
 
 function Product({ context }){
 
@@ -45,11 +46,7 @@ function Product({ context }){
         <Layout>
         { product ? 
         <div>
-            <div className="product-image-gallery">
-                <div className="product-thumbnails"></div>
-                <div className="product-images"><img src={product.frontimg}></img></div>
-                
-            </div>
+            <ProductGallery product={product}/>
             <h1><span style={{ textTransform: "capitalize" }}>{product.brand}</span> - {product.name}</h1>
             <ProductForm 
                 productOptions={product.product_options[0]}
