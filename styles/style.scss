@@ -26,7 +26,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: clamp(355px, 80vw, 800px);
+    // width: clamp(355px, 80vw, 800px);
+    width: 800px;
+    max-width: 100%;
+    padding: 0 10px;
+    background: $light-0;
     margin: auto;
     & > * {
         width: 100%;
