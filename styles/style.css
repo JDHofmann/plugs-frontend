@@ -226,8 +226,8 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
 
 .cart-count {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: -7.5px;
+  right: -7.5px;
   background: #e00000;
   color: #ffffff;
   font-size: 10px;
