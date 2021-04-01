@@ -21,15 +21,23 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+    padding: 40px 0;
+    text-align: center;
+}
+
+p {
+    color: $dark-5;
+    font-weight: 200;
+}
 .content {
     min-height: calc(100vh - 200px);
     display: flex;
     align-items: center;
     justify-content: center;
-    // width: clamp(355px, 80vw, 800px);
     width: 800px;
     max-width: 100%;
-    padding: 0 10px;
+    padding: 0 20px;
     background: $light-0;
     margin: auto;
     & > * {

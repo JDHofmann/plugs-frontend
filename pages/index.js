@@ -11,12 +11,12 @@ function Home({context}) {
     <Layout>
       <div>
         <h1>Home</h1>
-        <CategoryContainer title="Phones" products={renderProductByCategory("phone")}/>
-        <CategoryContainer title="Tablets" products={renderProductByCategory("tablet")}/>
-        <CategoryContainer title="Laptops" products={renderProductByCategory("laptop")}/>
-        <CategoryContainer title="Smart Watches" products={renderProductByCategory("smart watch")}/>
-        <CategoryContainer title="TV's" products={renderProductByCategory("tv")}/>
-        <CategoryContainer title="Accessories" products={renderProductByCategory("accessory")}/>
+        <CategoryContainer id="phones" title="Phones" products={renderProductByCategory("phone")}/>
+        <CategoryContainer id="tablets" title="Tablets" products={renderProductByCategory("tablet")}/>
+        <CategoryContainer id="laptops" title="Laptops" products={renderProductByCategory("laptop")}/>
+        <CategoryContainer id="smart-wathces" title="Smart Watches" products={renderProductByCategory("smart watch")}/>
+        <CategoryContainer id="tvs" title="TV's" products={renderProductByCategory("tv")}/>
+        <CategoryContainer id="accessories" title="Accessories" products={renderProductByCategory("accessory")}/>
       </div>
       </Layout>
   )

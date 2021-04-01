@@ -45,9 +45,11 @@ function Product({ context }){
         <Layout>
         { product ? 
         <div>
+            <div className="product-image-container">
+
+                <img src={product.frontimg}></img>
+            </div>
             <h1><span style={{ textTransform: "capitalize" }}>{product.brand}</span> - {product.name}</h1>
-            <img style={{width: "100px"}} src={product.frontimg}></img>
-            <p>{product.additional_specs}</p>
             <ProductForm 
                 productOptions={product.product_options[0]}
                 setProductOption={setProductOption}
@@ -58,6 +60,7 @@ function Product({ context }){
                 quantity={quantity}
                 setQuantity={setQuantity}
             />
+            <p>{product.additional_specs}</p>
         </div>
         : null }
         </Layout>

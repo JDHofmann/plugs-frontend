@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export default function Menu({menuOpen}){
+
     return(
         <nav 
             class={ menuOpen ? "main-menu main-menu-active" : "main-menu"}
@@ -8,13 +9,14 @@ export default function Menu({menuOpen}){
         >
             <ul>
                 <li className="main-menu-item shop"><h3>Shop</h3>
-                    <ul className="sub-list">
-                        <li><Link href="/"><a>Phones</a></Link></li>
-                        <li><Link href="/"><a>Tablets</a></Link></li>
-                        <li><Link href="/"><a>Laptops</a></Link></li>
-                        <li><Link href="/"><a>TVs</a></Link></li>
-                        <li><Link href="/"><a>Smart Watches</a></Link></li>
-                        <li><Link href="/"><a>Accessories</a></Link></li>
+                    <ul className="sub-list"
+                    >
+                        <li><Link href="/phones"><a>Phones</a></Link></li>
+                        <li><Link href="/tablets"><a>Tablets</a></Link></li>
+                        <li><Link href="/laptops"><a>Laptops</a></Link></li>
+                        <li><Link href="/tvs"><a>TVs</a></Link></li>
+                        <li><Link href="/smart-watches"><a>Smart Watches</a></Link></li>
+                        <li><Link href="/accessories"><a>Accessories</a></Link></li>
                     </ul>
                 </li>
                 <li className="main-menu-item"><Link href="/cart"><a>Cart</a></Link></li>
