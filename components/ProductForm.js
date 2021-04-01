@@ -1,4 +1,6 @@
 import Prices from "./Prices";
+import { useState } from "react";
+
 
 export default function ProductForm(
     {
@@ -11,6 +13,8 @@ export default function ProductForm(
         setQuantity
     }
     ){
+
+    const [ addToCartButtonText, setAddToCartButtonText ] = useState("Add To Cart")
 
     const handleSelectionChange = (e) => {
         let optionSelected = parseInt(e.target.value)
@@ -29,6 +33,9 @@ export default function ProductForm(
             productId: product.id,
             quantity: quantity
         });
+        setAddToCartButtonText("Adding To Cart...");
+        setTimeout(() => {setAddToCartButtonText("Success!")}, 2000);
+        setTimeout(() => {setAddToCartButtonText("Add To Cart")}, 4000);
     }
 
     const renderOptionValues = (productOptions) => {
@@ -59,12 +66,12 @@ export default function ProductForm(
                     onChange={handleQuantityChange} 
                 />
                 <label htmlFor="qty">Quantity</label>
-                <button type="submit">Add to Cart</button>
+                <Prices 
+                    selectedOption={selectedOption}
+                    skus={product.skus}
+                />
+                <button className="add-to-cart-btn" type="submit">{addToCartButtonText}</button>
             </form>
-            <Prices 
-                selectedOption={selectedOption}
-                skus={product.skus}
-            />
         </div>
     )
 }

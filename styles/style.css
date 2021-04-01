@@ -97,6 +97,28 @@ a {
       justify-self: center;
 }
 
+.add-to-cart-btn {
+  background: #303030;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  width: 335px;
+  height: 50px;
+  display: block;
+  margin: 40px auto;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  outline: none;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.add-to-cart-btn:hover, .add-to-cart-btn:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
+}
+
 header {
   position: relative;
   z-index: 100;
@@ -352,12 +374,19 @@ footer span {
   border: none;
   outline: none;
   width: 335px;
-  height: 40px;
+  height: 50px;
   display: block;
   margin: 40px auto;
   font-size: 16px;
+  font-weight: 600;
   letter-spacing: 2px;
   outline: none;
+  outline: none;
+}
+
+.checkout:hover, .checkout:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
 }
 
 .checkout:hover, .checkout:focus {

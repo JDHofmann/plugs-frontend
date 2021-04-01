@@ -27,13 +27,6 @@
 .checkout {
     background: $dark-3;
     color: $light-0;
-    border: none;
-    outline: none;
-    width: 335px;
-    height: 40px;
-    display: block;
-    margin: 40px auto;
-    font-size: 16px;
-    letter-spacing: 2px;
+    @include buttonStyle();
     @include hoverFocus();
 }

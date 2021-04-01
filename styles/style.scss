@@ -7,12 +7,14 @@
 
 @import 
     'components/cartitem',
+    'components/product-form',
     'components/header',
     'components/menu',
     'components/footer';
 
 @import
-    'pages/cart';
+    'pages/cart',
+    'pages/product';
 
 .content {
     min-height: calc(100vh - 200px);
