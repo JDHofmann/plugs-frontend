@@ -45,20 +45,22 @@ function Product({ context }){
     return (
         <Layout>
         { product ? 
-        <div>
+        <div className="product-grid">
             <ProductGallery product={product}/>
-            <h1><span style={{ textTransform: "capitalize" }}>{product.brand}</span> - {product.name}</h1>
-            <ProductForm 
-                productOptions={product.product_options[0]}
-                setProductOption={setProductOption}
-                product={product}
-                selectedOption={selectedOption}
-                setSelectedOption={setSelectedOption}
-                addToCart={addToCart}
-                quantity={quantity}
-                setQuantity={setQuantity}
-            />
-            <p>{product.additional_specs}</p>
+            <div className="product-grid-section-two">
+                <h1><span style={{ textTransform: "capitalize" }}>{product.brand}</span> - {product.name}</h1>
+                <ProductForm 
+                    productOptions={product.product_options[0]}
+                    setProductOption={setProductOption}
+                    product={product}
+                    selectedOption={selectedOption}
+                    setSelectedOption={setSelectedOption}
+                    addToCart={addToCart}
+                    quantity={quantity}
+                    setQuantity={setQuantity}
+                />
+                <p>{product.additional_specs}</p>
+            </div>
         </div>
         : <p className="loading">Loading</p> }
         </Layout>
