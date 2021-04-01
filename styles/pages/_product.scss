@@ -1,9 +1,25 @@
-.product-image-container {
+.product-image-gallery {
     margin: 40px auto;
-    width: 400px;
-    max-width: 100%;
     padding: 0 40px;
-    img {
-        width: 100%;
+    @media (min-width: 769px){
+        display: flex;
+    }
+    .product-images {
+        width: 350px;
+        max-width: 100%;
+        display: block;
+        margin: auto;
+        img {
+            width: 100%;
+        }
+    }
+}
+.product-thumbnails {
+    display: none;
+    @media (min-width: 769px){
+        display: block;
+        background: #ff0000;
+        width: 75px;
+        height: 75px;
     }
 }

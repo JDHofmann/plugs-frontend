@@ -35,7 +35,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 800px;
+    width: 1000px;
     max-width: 100%;
     padding: 0 20px;
     background: $light-0;
@@ -54,4 +54,8 @@ p {
     position: absolute;
     overflow: hidden;
     width: 0;
+}
+
+.loading {
+    text-align: center;
 }
