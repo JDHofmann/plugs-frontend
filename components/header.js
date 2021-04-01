@@ -6,7 +6,8 @@ import Menu from "./Menu";
 
 function Header({context}){
 
-    const [ menuOpen, setMenuOpen ] = useState(false)
+    const [ menuOpen, setMenuOpen ] = useState(false);
+    const [ cartPreview, setCartPreview ] = useState(false);
 
     const lockScroll = () => {
         // set the scroll lock before opening the menu
@@ -16,12 +17,14 @@ function Header({context}){
     }
 
     const handleMenuClick = () => {
+        // if cartPreview is open, close it
         lockScroll();
         setMenuOpen(!menuOpen);
     }
 
     const handleCartPreviewClick = () => {
-        
+        // if menu is open close menu
+        setCartPreview(!cartPreview)
     }
 
     return (
@@ -39,7 +42,10 @@ function Header({context}){
             <div className="site-title">
                 <Link href="/"><a>C<span>&</span>G</a></Link>
             </div>
-            <button className="header-cart">
+            <button 
+                className="header-cart"
+                onClick={handleCartPreviewClick}
+            >
                 <img className="cart-vector" src="/shopping-cart-vector.png"></img>
                 {context.cart.length > 0 ? 
                 <span className="cart-count">{context.cart.length}</span>
@@ -47,7 +53,7 @@ function Header({context}){
             </button>
         </header>
         <Menu menuOpen={menuOpen} />
-        {/* <CartPreview /> */}
+        <CartPreview cartPreview={cartPreview}/>
         </>
     )
 }

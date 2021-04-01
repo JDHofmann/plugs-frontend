@@ -1,6 +1,6 @@
 import withContext from "../withContext";
 
-function CartPreview({context}){
+function CartPreview({cartPreview, context}){
     const findProductById = (id) => {
        let item = context.products.filter(obj => obj.id === id)
        return item[0];
@@ -13,10 +13,15 @@ function CartPreview({context}){
     }
 
     return (
+        <>
+        { cartPreview? 
         <div>
             <h2>Cart Preview</h2>
             {renderCartItems()}
         </div>
+        : null
+         }
+        </>
     )
 }
 
