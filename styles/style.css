@@ -97,6 +97,20 @@ a {
       justify-self: center;
 }
 
+.cart-preview-container {
+  position: absolute;
+  right: -1000px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  background: #f0f0f0;
+  width: 500px;
+  max-width: 100%;
+}
+
+.cart-preview-active {
+  right: 0;
+}
+
 .add-to-cart-btn {
   background: #303030;
   color: #ffffff;
@@ -394,6 +408,10 @@ footer span {
 .checkout:hover, .checkout:focus {
   outline-offset: 3px;
   outline: 2px solid #303030;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .content {

@@ -14,13 +14,10 @@ function CartPreview({cartPreview, context}){
 
     return (
         <>
-        { cartPreview? 
-        <div>
+        <div className={ cartPreview ? "cart-preview-container cart-preview-active" : "cart-preview-container" }>
             <h2>Cart Preview</h2>
             {renderCartItems()}
         </div>
-        : null
-         }
         </>
     )
 }
