@@ -6,17 +6,19 @@ function CartPreview({cartPreview, context}){
        return item[0];
     }
     const renderCartItems = () => {
-        return context.cart.map(i => <div key={i.skuId}>
+        return context.cart.map(i => <li key={i.skuId}>
             <p>{findProductById(i.productId).name}</p>
             <img style={{width: "25px"}} src={findProductById(i.productId).frontimg}/>
-            </div>)
+            </li>)
     }
 
     return (
         <>
         <div className={ cartPreview ? "cart-preview-container cart-preview-active" : "cart-preview-container" }>
-            <h2>Cart Preview</h2>
-            {renderCartItems()}
+            <ul>
+            <h2>Shopping Cart Items</h2>
+                {renderCartItems()}
+            </ul>
         </div>
         </>
     )

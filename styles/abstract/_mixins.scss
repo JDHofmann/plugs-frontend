@@ -23,3 +23,31 @@
     letter-spacing: 2px;
     @include hoverFocus();
 }
+
+@mixin slideOutBaseStyle(){
+    background: $light-1;
+    overflow: hidden;
+    width: 0;
+    position: absolute;
+    transition: .5s ease;
+    height: auto;
+    min-height: 100vh;
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        display: none;
+        li {
+            text-align: center;
+            padding: 10px 0;
+        }
+    }
+}
+
+@mixin slideOutActiveStyle(){
+    overflow: scroll;
+    ul {
+        display: block;
+    }
+}

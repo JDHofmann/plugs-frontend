@@ -1,14 +1,7 @@
 .main-menu {
-    background: $light-1;
-    overflow: hidden;
-    width: 0;
-    height: auto;
-    min-height: 100vh;
-    position: absolute;
+    @include slideOutBaseStyle();
     left: -1px;
-    transition: .5s ease;
     z-index: 100;
-    
     ul {
         display: flex;
         flex-direction: column;

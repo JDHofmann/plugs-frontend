@@ -98,17 +98,55 @@ a {
 }
 
 .cart-preview-container {
-  position: absolute;
-  right: -1000px;
-  -webkit-transition: 1s;
-  transition: 1s;
   background: #f0f0f0;
-  width: 500px;
-  max-width: 100%;
+  overflow: hidden;
+  width: 0;
+  position: absolute;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  height: auto;
+  min-height: 100vh;
+  right: -1px;
+  z-index: 99;
+}
+
+.cart-preview-container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  display: none;
+}
+
+.cart-preview-container ul li {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.cart-preview-container h2 {
+  text-align: center;
+}
+
+.cart-preview-container ul li {
+  text-align: right;
 }
 
 .cart-preview-active {
+  overflow: scroll;
+  width: 500px;
   right: 0;
+  max-width: 100%;
+}
+
+.cart-preview-active ul {
+  display: block;
 }
 
 .add-to-cart-btn {
@@ -287,13 +325,33 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
   background: #f0f0f0;
   overflow: hidden;
   width: 0;
-  height: auto;
-  min-height: 100vh;
   position: absolute;
-  left: -1px;
   -webkit-transition: .5s ease;
   transition: .5s ease;
+  height: auto;
+  min-height: 100vh;
+  left: -1px;
   z-index: 100;
+}
+
+.main-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  display: none;
+}
+
+.main-menu ul li {
+  text-align: center;
+  padding: 10px 0;
 }
 
 .main-menu ul {
