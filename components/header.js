@@ -8,12 +8,20 @@ function Header({context}){
 
     const [ menuOpen, setMenuOpen ] = useState(false)
 
-    const handleMenuClick = () => {
+    const lockScroll = () => {
         // set the scroll lock before opening the menu
         let body = document.querySelector('.content');
         menuOpen ? 
         body.style.position = "static" :  body.style.position = "fixed"
+    }
+
+    const handleMenuClick = () => {
+        lockScroll();
         setMenuOpen(!menuOpen);
+    }
+
+    const handleCartPreviewClick = () => {
+        
     }
 
     return (
@@ -37,13 +45,9 @@ function Header({context}){
                 <span className="cart-count">{context.cart.length}</span>
                 : null }
             </button>
-            {/* <h1>HEADER</h1>
-            <p>Welcome Back: {context.user.username}</p>
-            <Link href="/cart"><a>Cart</a></Link>
-            <Link href="/"><a>Home</a></Link>
-        <CartPreview /> */}
         </header>
         <Menu menuOpen={menuOpen} />
+        {/* <CartPreview /> */}
         </>
     )
 }
