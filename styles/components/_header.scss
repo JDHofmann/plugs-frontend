@@ -79,6 +79,8 @@ header {
 .header-cart {
     width: 40px;
     height: 40px;
+    background: none;
+    border: none;
     margin: 20px;
     z-index: 1000;
     @include hoverFocus();

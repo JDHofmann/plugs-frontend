@@ -230,6 +230,8 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
 .header-cart {
   width: 40px;
   height: 40px;
+  background: none;
+  border: none;
   margin: 20px;
   z-index: 1000;
   outline: none;

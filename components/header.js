@@ -31,12 +31,12 @@ function Header({context}){
             <div className="site-title">
                 <Link href="/"><a>C<span>&</span>G</a></Link>
             </div>
-            <div className="header-cart">
+            <button className="header-cart">
                 <img className="cart-vector" src="/shopping-cart-vector.png"></img>
                 {context.cart.length > 0 ? 
                 <span className="cart-count">{context.cart.length}</span>
                 : null }
-            </div>
+            </button>
             {/* <h1>HEADER</h1>
             <p>Welcome Back: {context.user.username}</p>
             <Link href="/cart"><a>Cart</a></Link>
