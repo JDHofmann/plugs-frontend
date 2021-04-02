@@ -54,9 +54,14 @@ export default function ProductForm(
                 onSubmit={handleSubmit}
                 >
                 <fieldset onChange={handleSelectionChange}>
-                <legend>{productOptions.name }</legend>
-                {renderOptionValues(productOptions)}
+                    <legend>{productOptions.name }</legend>
+                    {renderOptionValues(productOptions)}
+                    <Prices 
+                        selectedOption={selectedOption}
+                        skus={product.skus}
+                    />
                 </fieldset>
+                <label htmlFor="qty">Quantity</label>
                 <input 
                     id="qty"
                     type="number"
@@ -64,11 +69,6 @@ export default function ProductForm(
                     max="20"
                     value={quantity}
                     onChange={handleQuantityChange} 
-                />
-                <label htmlFor="qty">Quantity</label>
-                <Prices 
-                    selectedOption={selectedOption}
-                    skus={product.skus}
                 />
                 <button className="add-to-cart-btn" type="submit">{addToCartButtonText}</button>
             </form>

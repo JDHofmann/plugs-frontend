@@ -48,7 +48,9 @@ function Product({ context }){
         <div className="product-grid">
             <ProductGallery product={product}/>
             <div className="product-grid-section-two">
-                <h1><span style={{ textTransform: "capitalize" }}>{product.brand}</span> - {product.name}</h1>
+                <h1>
+                    <span className="product-brand" >{product.brand}</span>
+                     - {product.name}</h1>
                 <ProductForm 
                     productOptions={product.product_options[0]}
                     setProductOption={setProductOption}

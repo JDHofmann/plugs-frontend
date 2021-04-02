@@ -552,6 +552,14 @@ footer span {
   }
 }
 
+.product-grid h1 {
+  font-weight: 400;
+}
+
+.product-brand {
+  text-transform: capitalize;
+}
+
 body {
   overflow-x: hidden;
 }
