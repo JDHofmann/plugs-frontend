@@ -10,9 +10,13 @@
     outline: none;
     width: 20px;
     height: 20px;
+    font-size: 12px;
     margin: 10px 0;
+    color: $dark-6;
+    font-weight: 200;
     @media (min-width: 450px){
         margin: 10px auto;
+        font-size: 16px;
     }
 }
 

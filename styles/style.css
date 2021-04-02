@@ -62,7 +62,10 @@ a {
   outline: none;
   width: 20px;
   height: 20px;
+  font-size: 12px;
   margin: 10px 0;
+  color: #666666;
+  font-weight: 200;
 }
 
 .delete-item:hover, .delete-item:focus {
@@ -73,6 +76,7 @@ a {
 @media (min-width: 450px) {
   .delete-item {
     margin: 10px auto;
+    font-size: 16px;
   }
 }
 
