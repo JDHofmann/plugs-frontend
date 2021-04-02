@@ -1,6 +1,46 @@
+.product-form {
+    margin: 20px auto;
+    fieldset {
+        display: flex;
+        margin: 0 auto 40px;
+        border: 1px solid $light-3;
+        max-width: 335px;
+        legend {
+            padding: 0 20px;
+            text-align: center;
+        }
+    }
+    .product-option-values {
+        width: 50%;
+        padding: 10px;
+        p {
+            padding: 10px 0;
+        }
+    }
+    .values {
+        p {
+            @include hoverFocus();
+        }
+        width: calc( 50% + 17.5px);
+    }
+    .value-prices {
+        width: calc( 50% - 17.5px);
+    }
+}
+
+.product-qty {
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+}
+input.product-qty {
+    width: 40px;
+    height: 40px;
+    @include hoverFocus();
+}
+
 .add-to-cart-btn {
     background: $dark-3;
     color: $light-0;
     @include buttonStyle();
-    transition: 1s;
 }

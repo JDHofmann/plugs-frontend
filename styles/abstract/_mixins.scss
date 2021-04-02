@@ -5,6 +5,7 @@
 
 @mixin hoverFocus(){
     outline: none;
+    transition: .1s;
     &:hover, &:focus {
         outline-offset: 3px;
         outline: 2px solid $dark-3;
@@ -51,9 +52,3 @@
         display: block;
     }
 }
-
-// @mixin tabletBreak($content){
-//     @media (min-width: 769px){
-//         $content
-//     }
-// }

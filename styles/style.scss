@@ -8,8 +8,10 @@
 @import 
     'components/cartitem',
     'components/cart-preview',
-    'components/product-gallery',
+    'components/prices',
     'components/product-form',
+    'components/product-gallery',
+    'components/product-options',
     'components/header',
     'components/menu',
     'components/footer';
@@ -44,10 +46,6 @@ p {
     & > * {
         width: 100%;
     }
-}
-
-.selected {
-  color: $brand;
 }
 
 .clipped {

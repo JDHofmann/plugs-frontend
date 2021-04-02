@@ -1,5 +1,8 @@
 .product-grid {
     display: grid;
+    .product-grid-section-two {
+
+    }
     @media (min-width: 769px){
         grid-template-columns: auto 1fr;
         .product-grid-section-two {

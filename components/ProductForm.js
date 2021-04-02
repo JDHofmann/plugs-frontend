@@ -38,31 +38,31 @@ export default function ProductForm(
         setTimeout(() => {setAddToCartButtonText("Success!")}, 2000);
         setTimeout(() => {setAddToCartButtonText("Add To Cart")}, 4000);
     }
-    
+
     return (
-        <div>
-            <form 
-                onSubmit={handleSubmit}
-                >
-                <fieldset onChange={handleSelectionChange}>
-                    <legend>{productOptions.name } options</legend>
-                    <ProductOptions productOptions={productOptions} />
-                    <Prices 
-                        selectedOption={selectedOption}
-                        skus={product.skus}
-                    />
-                </fieldset>
-                <label htmlFor="qty">Quantity</label>
-                <input 
-                    id="qty"
-                    type="number"
-                    min="1"
-                    max="20"
-                    value={quantity}
-                    onChange={handleQuantityChange} 
-                />
-                <button className="add-to-cart-btn" type="submit">{addToCartButtonText}</button>
-            </form>
-        </div>
+        <form 
+            className="product-form"
+            onSubmit={handleSubmit}
+            >
+            <fieldset onChange={handleSelectionChange}>
+                <legend>choose a {productOptions.name } option</legend>
+                <div className="product-option-values values"><ProductOptions productOptions={productOptions} /></div>
+                <div className="product-option-values value-prices"><Prices 
+                    selectedOption={selectedOption}
+                    skus={product.skus}
+                /></div>
+            </fieldset>
+            <label className="product-qty" htmlFor="qty">Quantity</label>
+            <input 
+                className="product-qty"
+                id="qty"
+                type="number"
+                min="1"
+                max="20"
+                value={quantity}
+                onChange={handleQuantityChange} 
+            />
+            <button className="add-to-cart-btn" type="submit">{addToCartButtonText}</button>
+        </form>
     )
 }

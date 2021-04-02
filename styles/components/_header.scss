@@ -40,8 +40,7 @@ header {
         span:nth-child(3) {
             bottom: 0;
         }
-        &:hover , &:focus {
-            transition: .65s;
+        &:hover, &:focus {
             span:nth-child(2) {
                 left: 10px;
             }

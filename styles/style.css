@@ -13,7 +13,10 @@ span,
 footer,
 header,
 nav,
-button {
+button,
+form,
+fieldset,
+legend {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -51,6 +54,8 @@ a {
   height: 20px;
   margin: 10px;
   outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 .delete-item:hover, .delete-item:focus {
@@ -85,6 +90,8 @@ a {
   -ms-grid-column-align: center;
       justify-self: center;
   outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 .item-quantity:hover, .item-quantity:focus {
@@ -149,9 +156,103 @@ a {
   display: block;
 }
 
+.selected {
+  color: #303030;
+}
+
+.not-selected {
+  color: #b0b0b0;
+}
+
+.product-form {
+  margin: 20px auto;
+}
+
+.product-form fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto 40px;
+  border: 1px solid #d0d0d0;
+  max-width: 335px;
+}
+
+.product-form fieldset legend {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.product-form .product-option-values {
+  width: 50%;
+  padding: 10px;
+}
+
+.product-form .product-option-values p {
+  padding: 10px 0;
+}
+
+.product-form .values {
+  width: calc( 50% + 17.5px);
+}
+
+.product-form .values p {
+  outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.product-form .values p:hover, .product-form .values p:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
+}
+
+.product-form .value-prices {
+  width: calc( 50% - 17.5px);
+}
+
+.product-qty {
+  display: block;
+  margin: 5px auto;
+  text-align: center;
+}
+
+input.product-qty {
+  width: 40px;
+  height: 40px;
+  outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+input.product-qty:hover, input.product-qty:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
+}
+
+.add-to-cart-btn {
+  background: #303030;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  width: 335px;
+  height: 50px;
+  display: block;
+  margin: 40px auto;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.add-to-cart-btn:hover, .add-to-cart-btn:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
+}
+
 .product-image-gallery {
   margin: 20px auto;
-  padding: 0 40px;
   display: block;
 }
 
@@ -212,26 +313,17 @@ a {
   }
 }
 
-.add-to-cart-btn {
-  background: #303030;
-  color: #ffffff;
-  border: none;
-  outline: none;
-  width: 335px;
-  height: 50px;
-  display: block;
-  margin: 40px auto;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  outline: none;
-  -webkit-transition: 1s;
-  transition: 1s;
+.product-option-value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
 }
 
-.add-to-cart-btn:hover, .add-to-cart-btn:focus {
-  outline-offset: 3px;
-  outline: 2px solid #303030;
+.product-option-value label {
+  padding: 0 20px;
 }
 
 header {
@@ -257,6 +349,8 @@ header .burger-btn {
   z-index: 1000;
   position: relative;
   outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 header .burger-btn:hover, header .burger-btn:focus {
@@ -298,11 +392,6 @@ header .burger-btn span:nth-child(2) {
 
 header .burger-btn span:nth-child(3) {
   bottom: 0;
-}
-
-header .burger-btn:hover, header .burger-btn:focus {
-  -webkit-transition: .65s;
-  transition: .65s;
 }
 
 header .burger-btn:hover span:nth-child(2), header .burger-btn:focus span:nth-child(2) {
@@ -350,6 +439,8 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
   margin: 20px;
   z-index: 1000;
   outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
   position: relative;
 }
 
@@ -524,7 +615,10 @@ footer span {
   font-weight: 600;
   letter-spacing: 2px;
   outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
   outline: none;
+  transition: .1s;
 }
 
 .checkout:hover, .checkout:focus {
@@ -594,10 +688,6 @@ p {
 
 .content > * {
   width: 100%;
-}
-
-.selected {
-  color: #ff9966;
 }
 
 .clipped {
