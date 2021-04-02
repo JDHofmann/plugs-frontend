@@ -6,7 +6,8 @@
     @media (min-width: 769px){
         grid-template-columns: auto 1fr;
         .product-grid-section-two {
-            padding: 0 20px;
+            // padding: 0 20px;
+            margin: auto;
         }
     }
     h1 {

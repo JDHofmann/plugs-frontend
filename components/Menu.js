@@ -7,7 +7,7 @@ export default function Menu({menuOpen}){
             class={ menuOpen ? "main-menu main-menu-active" : "main-menu"}
             role="main menu"
         >
-            <ul>
+            <ul className="top-level-list">
                 <li className="main-menu-item shop"><h3>Shop</h3>
                     <ul className="sub-list"
                     >

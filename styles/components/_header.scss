@@ -67,6 +67,12 @@ header {
             }
         }
     }
+    @media (min-width: 769px){
+        grid-template-columns: 1fr auto 1fr;
+        .burger-btn {
+            display: none;
+        }
+    }
 }
 .site-title {
     font-size: 24px;
@@ -76,14 +82,17 @@ header {
 }
 
 .header-cart {
+    @include hoverFocus();
     width: 40px;
     height: 40px;
     background: none;
     border: none;
     margin: 20px;
     z-index: 1000;
-    @include hoverFocus();
     position: relative;
+    @media (min-width: 769px){
+        justify-self: right;
+    }
 }
 
 .cart-vector {

@@ -33,6 +33,7 @@
     overflow: hidden;
     width: 0;
     position: absolute;
+    top: 80px;
     transition: .5s ease;
     height: auto;
     min-height: 100vh;
@@ -64,7 +65,7 @@
 @mixin formInputStyling(){
     width: 80px;
     height: 40px;
-    padding: 20px;
+    padding: 20px 0;
     font-size: 20px;
     color: $dark-5;
     border: 1px solid $light-3;

@@ -12,6 +12,9 @@
             text-align: center;
             padding: 10px 0;
         }
+        h3, a {
+            font-size: 18px;
+        }
     }
     .main-menu-item {
         font-weight: 600;
@@ -21,6 +24,31 @@
         li {
             font-weight: 400;
             font-size: 18px;
+        }
+    }
+    @media (min-width: 769px){
+        width: 100%;
+        background: $light-0;
+        // overflow: hidden;
+        position: static;
+        top: 80px;
+        transition: .5s ease;
+        height: auto;
+        min-height: 40px;
+        .top-level-list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            // justify-content: center;
+            padding: 20px;
+            li {
+                text-align: center;
+                padding: 10px;
+                h3, a {
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
         }
     }
 }
