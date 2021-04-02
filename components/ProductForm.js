@@ -1,5 +1,6 @@
 import Prices from "./Prices";
 import { useState } from "react";
+import ProductOptions from "./ProductOptions";
 
 
 export default function ProductForm(
@@ -37,17 +38,7 @@ export default function ProductForm(
         setTimeout(() => {setAddToCartButtonText("Success!")}, 2000);
         setTimeout(() => {setAddToCartButtonText("Add To Cart")}, 4000);
     }
-
-    const renderOptionValues = (productOptions) => {
-        return productOptions.product_option_values.map(po => <p key={po.id}>
-            <input 
-                value={po.id} 
-                id={po.id}
-                name="selction"
-                type="radio"></input><label htmlFor={po.id}>{po.name}</label>
-            </p>);
-    }
-
+    
     return (
         <div>
             <form 
@@ -55,7 +46,7 @@ export default function ProductForm(
                 >
                 <fieldset onChange={handleSelectionChange}>
                     <legend>{productOptions.name } options</legend>
-                    {renderOptionValues(productOptions)}
+                    <ProductOptions productOptions={productOptions} />
                     <Prices 
                         selectedOption={selectedOption}
                         skus={product.skus}
