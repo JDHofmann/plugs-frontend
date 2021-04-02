@@ -4,13 +4,16 @@
     margin: 40px 0;
 }
 .delete-item {
+    @include hoverFocus();
     background: none;
     border: none;
     outline: none;
     width: 20px;
     height: 20px;
-    margin: 10px;
-    @include hoverFocus();
+    margin: 10px 0;
+    @media (min-width: 450px){
+        margin: 10px auto;
+    }
 }
 
 .item-description {
@@ -23,15 +26,19 @@
         justify-self: left;
     }
     .description-text {
-        margin: 0 20px;
+        margin: 0 10px;
         // justify-self: center;
     }
 }
-.item-quantity {
+input.item-quantity {
+    @include formInputStyling();
+    padding: 20px 0;
     width: 40px;
-    height: 40px;
     justify-self: center;
-    @include hoverFocus();
+    @media (min-width: 450px){
+        padding: 20px;
+        width: 80px;
+    }
 }
 .item-price {
     justify-self: center;

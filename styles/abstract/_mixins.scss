@@ -1,6 +1,9 @@
 @mixin cartGird(){
     display: grid;
-    grid-template-columns: 40px auto 50px 50px;
+    grid-template-columns: 25px auto 40px 60px;
+    @media (min-width: 450px){
+        grid-template-columns: 80px auto 80px 80px;
+    }
 }
 
 @mixin hoverFocus(){
@@ -51,4 +54,20 @@
     ul {
         display: block;
     }
+}
+
+@mixin formFontStyling(){
+    font-size: 20px;
+    font-weight: 300;
+}
+
+@mixin formInputStyling(){
+    width: 80px;
+    height: 40px;
+    padding: 20px;
+    font-size: 20px;
+    color: $dark-5;
+    border: 1px solid $light-3;
+    text-align: center;
+    @include hoverFocus();
 }
