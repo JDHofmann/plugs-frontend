@@ -54,7 +54,7 @@ export default function ProductForm(
                 onSubmit={handleSubmit}
                 >
                 <fieldset onChange={handleSelectionChange}>
-                    <legend>{productOptions.name }</legend>
+                    <legend>{productOptions.name } options</legend>
                     {renderOptionValues(productOptions)}
                     <Prices 
                         selectedOption={selectedOption}
