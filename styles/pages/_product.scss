@@ -16,3 +16,8 @@
 .product-brand {
     text-transform: capitalize;
 }
+.product-additional-specs {
+    @media (min-width: 769px){
+        padding: 0 40px;
+    }
+}

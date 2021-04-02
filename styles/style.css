@@ -551,6 +551,8 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
 footer {
   background: #ff9966;
   margin-top: 40px;
+  font-weight: 400;
+  color: #303030;
 }
 
 footer div {
@@ -560,10 +562,13 @@ footer div {
 footer h4 {
   padding: 35px 0;
   font-size: 17px;
+  font-weight: 500;
 }
 
-footer .address {
+footer .address p {
   font-size: 15px;
+  color: #303030;
+  font-weight: 400;
 }
 
 footer span {
@@ -654,6 +659,12 @@ footer span {
   text-transform: capitalize;
 }
 
+@media (min-width: 769px) {
+  .product-additional-specs {
+    padding: 0 40px;
+  }
+}
+
 body {
   overflow-x: hidden;
 }
@@ -666,6 +677,9 @@ h1 {
 p {
   color: #505050;
   font-weight: 200;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: .5px;
 }
 
 .content {

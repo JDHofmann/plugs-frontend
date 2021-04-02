@@ -32,6 +32,9 @@ h1 {
 p {
     color: $dark-5;
     font-weight: 200;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: .5px;
 }
 .content {
     min-height: calc(100vh - 200px);

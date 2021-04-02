@@ -61,7 +61,7 @@ function Product({ context }){
                     quantity={quantity}
                     setQuantity={setQuantity}
                 />
-                <p>{product.additional_specs}</p>
+                <p className="product-additional-specs">{product.additional_specs}</p>
             </div>
         </div>
         : <p className="loading">Loading</p> }
