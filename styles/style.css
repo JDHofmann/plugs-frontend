@@ -822,7 +822,7 @@ footer span {
   text-transform: capitalize;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 450px) {
   .product-additional-specs {
     padding: 0 40px;
   }
