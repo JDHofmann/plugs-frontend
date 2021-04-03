@@ -17,12 +17,21 @@
             line-height: 18px;
             height: 18px;
         }
+        h3 {
+            border-bottom: 1px solid $dark-5;
+            padding-bottom: 10px;
+            height: auto;
+            width: 50%;
+            margin: auto;
+        }
     }
     .main-menu-item {
         font-weight: 600;
         font-size: 20px;
     }
     .sub-list {
+        position: static;
+        background: none;
         li {
             font-weight: 400;
             font-size: 18px;
@@ -60,14 +69,31 @@
                     display: block;
                     @include hoverFocus();
                 }
+                h3 {
+                    width: 100%;
+                }
                 .shop-menu-btn {
                     display: block;
+                    position: relative;
                     padding: 0;
                 }
                 .shop-menu-header {
                     display: none;
                 }
             }
+        }
+        .sub-list {
+            display: none;
+            position: absolute;
+            background: $light-1;
+            top: 80px;
+            li {
+                font-weight: 400;
+                font-size: 18px;
+            }
+        }
+        .sub-list-active {
+            display: block;
         }
     }
 }

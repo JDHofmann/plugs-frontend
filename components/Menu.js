@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useState } from 'react';
 
 export default function Menu({menuOpen}){
+
+    const [ shopMenu, setShopMenu ] = useState(false)
 
     return(
         <nav 
@@ -10,8 +13,12 @@ export default function Menu({menuOpen}){
             <ul className="top-level-list">
                 <li className="main-menu-item shop">
                     <h3 className="shop-menu-header">Shop</h3>
-                    <button className="shop-menu-btn"><h3>Shop</h3></button>
-                    <ul className="sub-list"
+                    <button
+                        onClick={() => setShopMenu(!shopMenu)}
+                        className="shop-menu-btn"
+                        aria-labelledby={ shopMenu ? "show product categories" : "hide product categories" }
+                    ><h3>Shop</h3></button>
+                    <ul className={ shopMenu ? "sub-list-active sub-list" : "sub-list" }
                     >
                         <li><Link href="/phones"><a>Phones</a></Link></li>
                         <li><Link href="/tablets"><a>Tablets</a></Link></li>

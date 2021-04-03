@@ -593,9 +593,22 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
   height: 18px;
 }
 
+.main-menu ul h3 {
+  border-bottom: 1px solid #505050;
+  padding-bottom: 10px;
+  height: auto;
+  width: 50%;
+  margin: auto;
+}
+
 .main-menu .main-menu-item {
   font-weight: 600;
   font-size: 20px;
+}
+
+.main-menu .sub-list {
+  position: static;
+  background: none;
 }
 
 .main-menu .sub-list li {
@@ -655,12 +668,29 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
     outline-offset: 3px;
     outline: 2px solid #303030;
   }
+  .main-menu .top-level-list li h3 {
+    width: 100%;
+  }
   .main-menu .top-level-list li .shop-menu-btn {
     display: block;
+    position: relative;
     padding: 0;
   }
   .main-menu .top-level-list li .shop-menu-header {
     display: none;
+  }
+  .main-menu .sub-list {
+    display: none;
+    position: absolute;
+    background: #f0f0f0;
+    top: 80px;
+  }
+  .main-menu .sub-list li {
+    font-weight: 400;
+    font-size: 18px;
+  }
+  .main-menu .sub-list-active {
+    display: block;
   }
 }
 
