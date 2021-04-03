@@ -7,7 +7,7 @@ import ProductGallery from "../../components/ProductGallery";
 
 function Product({ context }){
 
-    const router = useRouter()
+    const router = useRouter();
     // use the same naming convention as inside []'s for file
     const { productId } = router.query;
 
@@ -39,6 +39,7 @@ function Product({ context }){
 
     useEffect( () => {
         let foundProduct = context.products.filter(p => p.id === parseInt(productId))
+        console.log("useEffect running")
         setProduct(foundProduct[0]);
     })
 
