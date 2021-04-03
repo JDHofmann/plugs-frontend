@@ -585,7 +585,6 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
 .main-menu ul li {
   text-align: center;
   padding: 10px 0;
-  height: 40px;
 }
 
 .main-menu ul h3, .main-menu ul a {
@@ -641,12 +640,20 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
   .main-menu .top-level-list li {
     text-align: center;
     padding: 14px 10px 6px;
+    height: 40px;
   }
   .main-menu .top-level-list li h3, .main-menu .top-level-list li a {
     font-size: 16px;
     line-height: 16px;
     font-weight: 400;
     display: block;
+    outline: none;
+    -webkit-transition: .1s;
+    transition: .1s;
+  }
+  .main-menu .top-level-list li h3:hover, .main-menu .top-level-list li h3:focus, .main-menu .top-level-list li a:hover, .main-menu .top-level-list li a:focus {
+    outline-offset: 3px;
+    outline: 2px solid #303030;
   }
   .main-menu .top-level-list li .shop-menu-btn {
     display: block;

@@ -11,7 +11,6 @@
         li {
             text-align: center;
             padding: 10px 0;
-            height: 40px;
         }
         h3, a {
             font-size: 18px;
@@ -53,11 +52,13 @@
             li {
                 text-align: center;
                 padding: 14px 10px 6px;
+                height: 40px;
                 h3, a {
                     font-size: 16px;
                     line-height: 16px;
                     font-weight: 400;
                     display: block;
+                    @include hoverFocus();
                 }
                 .shop-menu-btn {
                     display: block;
