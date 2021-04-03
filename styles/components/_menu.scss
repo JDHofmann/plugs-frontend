@@ -11,9 +11,12 @@
         li {
             text-align: center;
             padding: 10px 0;
+            height: 40px;
         }
         h3, a {
             font-size: 18px;
+            line-height: 18px;
+            height: 18px;
         }
     }
     .main-menu-item {
@@ -26,10 +29,17 @@
             font-size: 18px;
         }
     }
+    .shop-menu-header {
+        display: block;
+    }
+    .shop-menu-btn {
+        display: none;
+        border: none;
+        background: none;
+    }
     @media (min-width: 769px){
         width: 100%;
         background: $light-0;
-        // overflow: hidden;
         position: static;
         top: 80px;
         transition: .5s ease;
@@ -39,14 +49,22 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            // justify-content: center;
             padding: 20px;
             li {
                 text-align: center;
                 padding: 10px;
                 h3, a {
                     font-size: 16px;
-                    font-weight: 500;
+                    line-height: 16px;
+                    font-weight: 400;
+                    display: block;
+                }
+                .shop-menu-btn {
+                    display: block;
+                    padding: 0;
+                }
+                .shop-menu-header {
+                    display: none;
                 }
             }
         }

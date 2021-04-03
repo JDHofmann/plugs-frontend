@@ -8,7 +8,9 @@ export default function Menu({menuOpen}){
             role="main menu"
         >
             <ul className="top-level-list">
-                <li className="main-menu-item shop"><h3>Shop</h3>
+                <li className="main-menu-item shop">
+                    <h3 className="shop-menu-header">Shop</h3>
+                    <button className="shop-menu-btn"><h3>Shop</h3></button>
                     <ul className="sub-list"
                     >
                         <li><Link href="/phones"><a>Phones</a></Link></li>
