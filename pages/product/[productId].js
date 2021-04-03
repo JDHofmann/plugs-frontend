@@ -39,7 +39,6 @@ function Product({ context }){
 
     useEffect( () => {
         let foundProduct = context.products.filter(p => p.id === parseInt(productId))
-        console.log("useEffect running")
         setProduct(foundProduct[0]);
     })
 

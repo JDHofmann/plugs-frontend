@@ -30,10 +30,7 @@ useEffect( async () => {
       cart: cart,
       setCart: setCart
       }}>
-      {/* <Layout> */}
-
         <Component {...pageProps} />
-      {/* </Layout> */}
     </Context.Provider>
   )
 }
