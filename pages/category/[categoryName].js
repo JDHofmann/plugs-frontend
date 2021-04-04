@@ -25,7 +25,7 @@ function Category({context}){
             { category.length > 0 ?
             <div>
                 <h1 className="category-header">{categoryName}</h1>
-                <ul>
+                <ul className="category-product-list">
                 {renderProductItems()}
                 </ul>
             </div>

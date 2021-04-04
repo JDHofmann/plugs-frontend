@@ -198,7 +198,6 @@ input.item-quantity:hover, input.item-quantity:focus {
 
 .product-card {
   margin: auto;
-  padding: 20px 0;
   text-align: center;
 }
 
@@ -828,6 +827,25 @@ footer span {
 
 .category-header {
   border-bottom: 1px solid #666666;
+  width: 50%;
+  margin: auto;
+  font-size: 26px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.category-product-list {
+  display: -ms-grid;
+  display: grid;
+  padding: 20px;
+  grid-gap: 40px;
+}
+
+@media (min-width: 769px) {
+  .category-product-list {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
 }
 
 .product-grid {
@@ -891,7 +909,7 @@ p {
   max-width: 100%;
   padding: 40px 20px;
   background: #ffffff;
-  margin: auto;
+  margin: auto auto 80px;
 }
 
 .content > * {
