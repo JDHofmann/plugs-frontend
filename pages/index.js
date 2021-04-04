@@ -17,6 +17,14 @@ function Home({context}) {
     },
     { name: "tablets",
       url: "https://economictimes.indiatimes.com/thumb/msid-76216026,width-1200,height-900,resizemode-4,imgsize-235016/surface-pro-7-does-everything-that-a-tablet-should-do-and-doubles-up-as-a-really-efficient-laptop-.jpg?from=mdr"
+    },
+    {
+      name: "smart watches",
+      url: "https://the-gadgeteer.com/wp-content/uploads/2020/03/wyze-health-3.jpg"
+    },
+    {
+      name: "tvs",
+      url: "https://cdn.benzinga.com/files/imagecache/1024x768xUP/images/story/2012/shutterstock_110696096.jpg"
     }
   ]
 
@@ -38,7 +46,7 @@ function Home({context}) {
   useEffect( () => {
     let next;
     current === links.length - 1 ? next = 0 : next = (current + 1);
-    const id = setTimeout(() => setCurrent(next), 2000);
+    const id = setTimeout(() => setCurrent(next), 7000);
     return () => clearTimeout(id);
   }, [current]);
 
