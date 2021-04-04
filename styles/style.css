@@ -855,7 +855,7 @@ footer span {
   background: #d0d0d0;
 }
 
-.scrolling-links-container .link p {
+.scrolling-links-container .link .category-link {
   position: absolute;
   top: 40vmax;
   height: 8vmax;
@@ -885,16 +885,17 @@ footer span {
   background-repeat: no-repeat;
 }
 
-.link-background {
+.link-img {
   height: 60vmax;
   width: 100%;
   max-width: calc(100vw - 40px);
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
   opacity: .65;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .in-view {
@@ -902,14 +903,6 @@ footer span {
   opacity: 1;
   width: 100%;
   max-width: calc(100vw - 40px);
-}
-
-#a {
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/71h6PpGaz9L._AC_SL1500_.jpg");
-}
-
-#b {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuudb8iGOhuvb35CxtFkczTElUawYzv2-sfA&usqp=CAU");
 }
 
 #c {
