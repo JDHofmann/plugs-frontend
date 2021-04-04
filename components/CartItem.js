@@ -7,6 +7,11 @@ function CartItem({item, context}) {
         return item[0];
     }
 
+    const findProductSku = (id, sku) => {
+        let product = findProductById(id);
+        return product.skus.filter(s => s.id === sku)[0];
+    }
+
     return (
         <li 
             key={item.skuId}
@@ -20,10 +25,11 @@ function CartItem({item, context}) {
                 <input 
                     className="item-quantity"
                     type="number" min="0" aria-labelledby="quantity-header"
+                    value={item.quantity}
                 />
                 
                 <div className="item-price">
-                    <span></span>
+                    <span>{findProductSku(item.productId, item.skuId).price}</span>
                     <span className="clipped">dollars</span>
                 </div>
             </li>

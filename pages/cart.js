@@ -5,7 +5,11 @@ import withContext from "../withContext";
 function Cart({context}) {
 
     const renderCartItems = () => {
-        return context.cart.map(i => <CartItem item={i}/>)
+        return context.cart.map(i => <CartItem key={i.id} item={i}/>)
+    }
+
+    const findPriceSum = () => {
+        // map over each cart item
     }
  
     return (
