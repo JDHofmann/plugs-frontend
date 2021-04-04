@@ -1,0 +1,22 @@
+.product-card {
+    margin: auto;
+    padding: 20px 0;
+    text-align: center;
+    img {
+        display: block;
+        width: 125px;
+        margin: 40px auto;
+    }
+    h2 {
+        font-size: 22px;
+        font-weight: 200;
+        margin: 10px auto;
+        span {
+            text-transform: capitalize;
+        }
+    }
+    .product-lowest-price {
+        font-size: 18px;
+        font-weight: 200;
+    }
+}

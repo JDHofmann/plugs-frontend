@@ -196,6 +196,33 @@ input.item-quantity:hover, input.item-quantity:focus {
   color: #b0b0b0;
 }
 
+.product-card {
+  margin: auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.product-card img {
+  display: block;
+  width: 125px;
+  margin: 40px auto;
+}
+
+.product-card h2 {
+  font-size: 22px;
+  font-weight: 200;
+  margin: 10px auto;
+}
+
+.product-card h2 span {
+  text-transform: capitalize;
+}
+
+.product-card .product-lowest-price {
+  font-size: 18px;
+  font-weight: 200;
+}
+
 .product-form {
   margin: 20px auto;
   font-size: 20px;
@@ -797,6 +824,10 @@ footer span {
 .checkout:hover, .checkout:focus {
   outline-offset: 3px;
   outline: 2px solid #303030;
+}
+
+.category-header {
+  border-bottom: 1px solid #666666;
 }
 
 .product-grid {

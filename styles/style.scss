@@ -9,6 +9,7 @@
     'components/cart-item',
     'components/cart-preview',
     'components/prices',
+    'components/product-card',
     'components/product-form',
     'components/product-gallery',
     'components/product-options',
@@ -18,6 +19,7 @@
 
 @import
     'pages/cart',
+    'pages/category',
     'pages/product';
 
 body {

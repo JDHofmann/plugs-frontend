@@ -14,7 +14,6 @@ function Category({context}){
     useEffect( () => {
                 let foundCategory = context.products.filter( p => p.category === categoryName);
                 setCategory(foundCategory);
-                console.log("rendering")
     }, [context.products])
     
     const renderProductItems = () => {
@@ -24,11 +23,15 @@ function Category({context}){
     return(
         <Layout>
             { category.length > 0 ?
-                <h1>{categoryName}</h1>
+            <div>
+                <h1 className="category-header">{categoryName}</h1>
+                <ul>
+                {renderProductItems()}
+                </ul>
+            </div>
                 :
                 <p className="loading">loading...</p>
             }
-            {renderProductItems()}
         </Layout>
     )
 }
