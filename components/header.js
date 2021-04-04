@@ -31,7 +31,7 @@ function Header({context}){
         <>
         <header>
             <button 
-            class={ menuOpen ? "burger-btn active" : "burger-btn"}
+            className={ menuOpen ? "burger-btn active" : "burger-btn"}
             onClick={handleMenuToggle}
             aria-labelledby="open-main-menu"
             >

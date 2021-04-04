@@ -7,7 +7,7 @@ export default function Menu({menuOpen}){
 
     return(
         <nav 
-            class={ menuOpen ? "main-menu main-menu-active" : "main-menu"}
+            className={ menuOpen ? "main-menu main-menu-active" : "main-menu"}
             role="main menu"
         >
             <ul className="top-level-list">

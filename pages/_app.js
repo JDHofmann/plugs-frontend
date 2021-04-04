@@ -9,7 +9,7 @@ const [ user, setUser ] = useState([]);
 const [ products, setProducts ] = useState([]);
 
 useEffect( async () => {
-  const res1 = await fetch("http://localhost:3000/users/3")
+  const res1 = await fetch("http://localhost:3000/users/5")
   const user = await res1.json();
   const res2 = await fetch("http://localhost:3000/products")
   const products = await res2.json();

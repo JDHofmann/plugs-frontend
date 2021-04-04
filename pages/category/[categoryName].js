@@ -5,25 +5,17 @@ import withContext from "../../withContext";
 import ProductCard from "../../components/ProductCard";
 
 
-function Category({context, stars}){
+function Category({context}){
 
     const router = useRouter();
     const { categoryName } = router.query;
     const [ category, setCategory ] = useState([]);
-
-    // const findCategory = () => {
-    //     return context.length > 0 ?
-    //     context.products.filter( p => p.category === categoryName) 
-    //     : null
-    // //     setCategory(foundCategory);
-    // }
 
     useEffect( () => {
                 let foundCategory = context.products.filter( p => p.category === categoryName);
                 setCategory(foundCategory);
                 console.log("rendering")
     }, [context.products])
-
     
     const renderProductItems = () => {
         return category.map(fp => <ProductCard key={fp.id} product={fp}/>)
