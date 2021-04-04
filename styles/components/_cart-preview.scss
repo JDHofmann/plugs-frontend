@@ -1,14 +1,37 @@
 .cart-preview-container {
     @include slideOutBaseStyle();
+    box-shadow: -10px 10px $dark-5;
     right: -1px;
     z-index: 99;
     h2 {
         text-align: center;
+        padding-bottom: 20px;
     }
     ul {
+        padding: 40px 20px;
         li {
-            text-align: right;
+            // text-align: right;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            .product-name {
+                padding: 0 20px 0 0;
+            }
+            img {
+                width: 40px;
+            }
         }
+    }
+    .checkout-link {
+        @include buttonStyle();
+        background: $dark-5;
+        color: $light-0;
+        display: grid;
+        place-items: center;
+    }
+    @media (min-width: 450px){
+        min-height: 0;
     }
 }
 

@@ -20,12 +20,12 @@ export default function Menu({menuOpen}){
                     ><h3>Shop</h3></button>
                     <ul className={ shopMenu ? "sub-list-active sub-list" : "sub-list" }
                     >
-                        <li><Link href="/phones"><a>Phones</a></Link></li>
-                        <li><Link href="/tablets"><a>Tablets</a></Link></li>
-                        <li><Link href="/laptops"><a>Laptops</a></Link></li>
-                        <li><Link href="/tvs"><a>TVs</a></Link></li>
-                        <li><Link href="/smart-watches"><a>Smart Watches</a></Link></li>
-                        <li><Link href="/accessories"><a>Accessories</a></Link></li>
+                        <li><Link href="/category/phones"><a>Phones</a></Link></li>
+                        <li><Link href="/category/tablets"><a>Tablets</a></Link></li>
+                        <li><Link href="/category/laptops"><a>Laptops</a></Link></li>
+                        <li><Link href="/category/tvs"><a>TVs</a></Link></li>
+                        <li><Link href="/category/smart watches"><a>Smart Watches</a></Link></li>
+                        <li><Link href="/category/accessories"><a>Accessories</a></Link></li>
                     </ul>
                 </li>
                 <li className="main-menu-item"><Link href="/cart"><a>Cart</a></Link></li>

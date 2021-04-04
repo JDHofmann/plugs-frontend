@@ -86,6 +86,7 @@
             display: none;
             position: absolute;
             background: $light-1;
+            box-shadow: -10px 10px $dark-5;
             top: 80px;
             li {
                 font-weight: 400;

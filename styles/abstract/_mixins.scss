@@ -30,6 +30,7 @@
 
 @mixin slideOutBaseStyle(){
     background: $light-1;
+    background: #f6f6f6;
     overflow: hidden;
     width: 0;
     position: absolute;

@@ -35,7 +35,9 @@ export default function ProductForm(
             quantity: quantity
         });
         setAddToCartButtonText("Adding To Cart...");
-        setTimeout(() => {setAddToCartButtonText("Success!")}, 2000);
+        setTimeout(() => {
+            setAddToCartButtonText("Success!")
+        }, 2000);
         setTimeout(() => {setAddToCartButtonText("Add To Cart")}, 4000);
     }
 
@@ -62,7 +64,10 @@ export default function ProductForm(
                 value={quantity}
                 onChange={handleQuantityChange} 
             />
-            <button className="add-to-cart-btn" type="submit">{addToCartButtonText}</button>
+            <button 
+                className={ addToCartButtonText === "Success!" ? "add-to-cart-btn brand": "add-to-cart-btn"} 
+                type="submit"
+            >{addToCartButtonText}</button>
         </form>
     )
 }
