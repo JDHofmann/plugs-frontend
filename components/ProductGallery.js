@@ -5,30 +5,31 @@ export default function ProductGallery({product}){
     const [ currentThumbnail, setCurrentThumbnail ] = useState(product.frontimg)
 
     const handleThumbnailClick = (e) => {
-        e.target.matches('img') ?
-        setCurrentThumbnail(e.target.src) 
-        : null
+        console.log(e.target.children[0])
+        // e.target.matches('img') ?
+        setCurrentThumbnail(e.target.children[0].src) 
+        // : null
     }
 
     return(
         <div className="product-image-gallery">
-            <div
-                onClick={handleThumbnailClick} 
-                className="product-thumbnails">
+            <div className="product-thumbnails">
                 <button 
-                    dataset="1" 
-                    
+                    onClick={handleThumbnailClick}
                     className="product-thumbnail"
                 >
                     <img src={product.frontimg}/>
                 </button>
-                <button 
-                    
+                <button
+                    onClick={handleThumbnailClick} 
                     className="product-thumbnail"
                 >
                     <img src={product.backimg}/>
                 </button>
-                <button className="product-thumbnail">
+                <button 
+                    onClick={handleThumbnailClick}
+                    className="product-thumbnail"
+                >
                     <img src={product.sideimg}/>
                 </button>
             </div>
