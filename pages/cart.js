@@ -1,8 +1,13 @@
 import CartItems from "../components/CartItems";
+import ConfirmationModal from "../components/ConfirmationModal";
 import Layout from "../components/Layout";
 import withContext from "../withContext";
+import { useState } from 'react'
 
 function Cart({context}) {
+
+    const [ confirmationModal, setConfirmationModal ] = useState(false)
+    const [ confirmationData, setConfirmationData ] = useState()
 
     const findProductById = (id) => {
         let item = context.products.filter(obj => obj.id === id)
@@ -43,7 +48,9 @@ function Cart({context}) {
         fetch("http://localhost:3000/orders", options)
         .then(response => response.json())
         .then(data => {
-            // modal/page with order confirmation
+            // <ConfirmationModal reciept={data} />
+            setConfirmationModal(true);
+            setConfirmationData(data);
             context.setCart([])
         })
     }
@@ -51,6 +58,13 @@ function Cart({context}) {
     return (
         <Layout>
             <div>
+                { confirmationModal ? 
+                <ConfirmationModal 
+                    reciept={confirmationData} 
+                    setConfirmationModal={setConfirmationModal}
+                />
+                : null
+                }
                 <h1 className="cart-header">Shopping Cart</h1>
                 <div className="cart">
                     <caption className="clipped">
@@ -58,7 +72,10 @@ function Cart({context}) {
                         <span>{findPriceSum()}</span>
                         <span>dollars</span>
                     </caption>
-                    <CartItems />
+                    <CartItems 
+                        findProductById={findProductById}
+                        findPriceSum={findPriceSum}
+                    />
                     {/* <div className="cart-headers">
                         <h2 className="item-header">Item</h2>
                         <span></span>

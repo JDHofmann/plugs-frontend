@@ -1,0 +1,25 @@
+.modal-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($dark-3, .5);
+}
+
+.confirmation-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    width: 500px;
+    max-width: 100%;
+    z-index: 3000;
+    background: $light-0;
+}
+
+.continue-to-shop {
+    @include buttonStyle();
+    background: $brand;
+}
