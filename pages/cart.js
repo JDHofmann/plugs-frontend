@@ -28,6 +28,33 @@ function Cart({context}) {
         return sum;
     }
 
+    const createSkus = (cart) => {
+        return cart.map( item => ({sku: item.skuId, quantity: parseInt(item.quantity)}))
+    }
+
+    const handleSubmit = () => {
+        let options = {
+            method: "POST",
+            headers: {
+                "content-type":"application/json",
+                "accept":"application/json"
+            },
+            body: JSON.stringify({
+                skus: createSkus(context.cart),
+                user_id: context.user.id
+            })
+        }
+        fetch("http://localhost:3000/orders", options)
+    .then(response => response.json())
+    .then(data => {
+        // modal/page with order confirmation
+        context.setLocalStorage([])
+
+    })
+
+
+    }
+
     return (
         <Layout>
             <div>
@@ -51,7 +78,11 @@ function Cart({context}) {
                         <span>Total</span>
                         <span>{findPriceSum()}</span>
                     </div>
-                    <button className="checkout">Checkout</button>
+                    <button
+                        type="submit" 
+                        onClick={handleSubmit}
+                        className="checkout"
+                    >Checkout</button>
                 </div>
             </div>
         </Layout>
