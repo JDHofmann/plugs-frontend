@@ -13,9 +13,9 @@ const setCart = (newCart) => {
 }
 
 useEffect( async () => {
-  const res1 = await fetch("http://localhost:3000/users/5")
+  const res1 = await fetch("https://candgbackend.herokuapp.com/users/1")
   const user = await res1.json();
-  const res2 = await fetch("http://localhost:3000/products")
+  const res2 = await fetch("https://candgbackend.herokuapp.com/products")
   const products = await res2.json();
   setUser(user);
   setProducts(products);
