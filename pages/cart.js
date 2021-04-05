@@ -27,7 +27,7 @@ function Cart({context}) {
         }, 0);
         return sum;
     }
-    findPriceSum()
+
     return (
         <Layout>
             <div>

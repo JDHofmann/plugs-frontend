@@ -1,6 +1,9 @@
-import withContext from '../withContext'
+import withContext from '../withContext';
+import { useState } from 'react';
 
 function CartItem({item, context}) {
+
+    const [ quantity, setQuantity ] = useState(item.quantity)
 
     const findProductById = (id) => {
         let item = context.products.filter(obj => obj.id === id)
@@ -10,6 +13,15 @@ function CartItem({item, context}) {
     const findProductSku = (id, sku) => {
         let product = findProductById(id);
         return product.skus.filter(s => s.id === sku)[0];
+    }
+
+    const handleQuantityChange = (e) => {
+        let currentCart = [...context.cart]
+        let foundItemIndex = currentCart.findIndex( i => i.skuId === item.skuId)
+        // console.log("foundItem = ", foundItemIndex)
+        currentCart[foundItemIndex].quantity = e.target.value.toString()
+        // console.log(currentCart[foundItemIndex])
+        context.setLocalStorage(currentCart)
     }
 
     return (
@@ -26,6 +38,7 @@ function CartItem({item, context}) {
                 className="item-quantity"
                 type="number" min="0" aria-labelledby="quantity-header"
                 value={item.quantity}
+                onChange={handleQuantityChange}
             />
             
             <div className="item-price">

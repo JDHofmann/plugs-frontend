@@ -1,12 +1,16 @@
 import '../styles/style.css'
 import Context from "../Context";
 import { useState, useEffect } from "react";
-import Layout from '../components/Layout';
 
 function MyApp({ Component, pageProps }) {
 const [ cart, setCart ] = useState([]);
 const [ user, setUser ] = useState([]);
 const [ products, setProducts ] = useState([]);
+
+const setLocalStorage = (newCart) => {
+  setCart(newCart);
+  localStorage.setItem('cart', JSON.stringify(newCart));
+}
 
 useEffect( async () => {
   const res1 = await fetch("http://localhost:3000/users/5")
@@ -28,7 +32,8 @@ useEffect( async () => {
       products: products,
       setProducts: setProducts, 
       cart: cart,
-      setCart: setCart
+      setCart: setCart,
+      setLocalStorage: setLocalStorage
       }}>
         <Component {...pageProps} />
     </Context.Provider>
