@@ -20,6 +20,8 @@
 .link {
     height: auto;
     width: inherit;
+    width: calc(1000px - 40px);
+    max-width: calc(100% - 40px);
     position: absolute;
     opacity: 0;
     transition: 1s;
@@ -42,8 +44,8 @@
 .in-view {
     z-index: 200;
     opacity: 1;
-    width: 100%;
-    max-width: calc(100vw - 40px);
+    width: calc(1000px - 40px);
+    max-width: calc(100% - 40px);
 }
 
 .mission {
