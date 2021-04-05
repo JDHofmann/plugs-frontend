@@ -4,14 +4,30 @@ import withContext from "../withContext";
 
 function Cart({context}) {
 
+    const findProductById = (id) => {
+        let item = context.products.filter(obj => obj.id === id)
+        return item[0];
+    }
+    
+    const findProductSku = (id, sku) => {
+        let product = findProductById(id);
+        return product.skus.filter(s => s.id === sku)[0];
+    }
+    
     const renderCartItems = () => {
         return context.cart.map(i => <CartItem key={i.id} item={i}/>)
     }
 
     const findPriceSum = () => {
-        // map over each cart item
+        let result = context.cart.map( item => (
+            item.quantity * findProductSku(item.productId, item.skuId).price
+        ))
+        let sum = result.reduce(function(a, b){
+            return a + b;
+        }, 0);
+        return sum;
     }
- 
+    findPriceSum()
     return (
         <Layout>
             <div>
@@ -19,7 +35,7 @@ function Cart({context}) {
                 <div className="cart">
                     <caption className="clipped">
                         <span>Shopping cart, total</span>
-                        <span>{}</span>
+                        <span>{findPriceSum()}</span>
                         <span>dollars</span>
                     </caption>
                     <div className="cart-headers">
@@ -33,7 +49,7 @@ function Cart({context}) {
                     </ul>
                     <div className="total">
                         <span>Total</span>
-                        <span>{}</span>
+                        <span>{findPriceSum()}</span>
                     </div>
                     <button className="checkout">Checkout</button>
                 </div>
