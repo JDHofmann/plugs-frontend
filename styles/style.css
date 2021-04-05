@@ -853,6 +853,13 @@ footer span {
       justify-self: left;
 }
 
+@media (min-width: 450px) {
+  .cart-headers .item-header {
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+}
+
 .total {
   text-align: right;
   margin: 40px 0;

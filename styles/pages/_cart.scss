@@ -17,6 +17,9 @@
     }
     .item-header {
         justify-self: left;
+        @media (min-width: 450px){
+            justify-self: center;
+        }
     }
 }
 
