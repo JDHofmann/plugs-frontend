@@ -16,18 +16,18 @@ function CartItem({item, context}) {
     }
 
     const handleQuantityChange = (e) => {
-        let currentCart = [...context.cart]
+        let currentCart = [...context.contextCart]
         let foundItemIndex = currentCart.findIndex( i => i.skuId === item.skuId)
         // console.log("foundItem = ", foundItemIndex)
         currentCart[foundItemIndex].quantity = e.target.value.toString()
         // console.log(currentCart[foundItemIndex])
-        context.setLocalStorage(currentCart)
+        context.setCart(currentCart)
     }
 
     const handleItemDelete = () => {
-        let currentCart = [...context.cart]
+        let currentCart = [...context.contextCart]
         let remainingItems = currentCart.filter( i => i.skuId !== item.skuId)
-        context.setLocalStorage(remainingItems)
+        context.setCart(remainingItems)
     }
 
     return (

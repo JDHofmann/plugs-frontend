@@ -3,12 +3,12 @@ import Context from "../Context";
 import { useState, useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
-const [ cart, setCart ] = useState([]);
+const [ contextCart, setContextCart ] = useState([]);
 const [ user, setUser ] = useState([]);
 const [ products, setProducts ] = useState([]);
 
-const setLocalStorage = (newCart) => {
-  setCart(newCart);
+const setCart = (newCart) => {
+  setContextCart(newCart);
   localStorage.setItem('cart', JSON.stringify(newCart));
 }
 
@@ -20,9 +20,9 @@ useEffect( async () => {
   setUser(user);
   setProducts(products);
   localStorage.getItem('cart').length < 1 ? 
-  setCart([])
+  setContextCart([])
   :
-  setCart(JSON.parse(localStorage.getItem('cart')))
+  setContextCart(JSON.parse(localStorage.getItem('cart')))
 }, [])
 
   return (
@@ -31,9 +31,9 @@ useEffect( async () => {
       setUser: setUser, 
       products: products,
       setProducts: setProducts, 
-      cart: cart,
-      setCart: setCart,
-      setLocalStorage: setLocalStorage
+      contextCart: contextCart,
+      setContextCart: setContextCart,
+      setCart: setCart
       }}>
         <Component {...pageProps} />
     </Context.Provider>

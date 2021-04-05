@@ -17,9 +17,9 @@ function Product({ context }){
     const [quantity, setQuantity ] = useState("1");
 
     const addToCart = ( itemObj ) => {
-        let currentCart = context.cart;
+        let currentCart = context.contextCart;
         let newCart;
-        if (context.cart.length < 1){
+        if (context.contextCart.length < 1){
             newCart = [itemObj];
         }
         else if ( context.cart.some(obj => obj.skuId === itemObj.skuId) ) {
@@ -34,7 +34,7 @@ function Product({ context }){
             newCart = [...currentCart, itemObj]
         }
         context.setCart(newCart);
-        localStorage.setItem('cart', JSON.stringify([...newCart]));
+        // localStorage.setItem('cart', JSON.stringify([...newCart]));
     }
 
     useEffect( () => {

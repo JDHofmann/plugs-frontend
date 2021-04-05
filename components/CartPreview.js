@@ -7,10 +7,10 @@ function CartPreview({cartPreview, context}){
        return item[0];
     }
     const renderCartItems = () => {
-        if(context.cart.length < 1){
+        if(context.contextCart.length < 1){
             return <p>You have no items in your cart</p>
         }
-        return context.cart.map(i => <li key={i.skuId}>
+        return context.contextCart.map(i => <li key={i.skuId}>
             <p className="product-name">{findProductById(i.productId).name}</p>
             <img src={findProductById(i.productId).frontimg}/>
             </li>)

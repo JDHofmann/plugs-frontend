@@ -15,11 +15,11 @@ function Cart({context}) {
     }
     
     const renderCartItems = () => {
-        return context.cart.map(i => <CartItem key={i.id} item={i}/>)
+        return context.contextCart.map(i => <CartItem key={i.id} item={i}/>)
     }
 
     const findPriceSum = () => {
-        let result = context.cart.map( item => (
+        let result = context.contextCart.map( item => (
             item.quantity * findProductSku(item.productId, item.skuId).price
         ))
         let sum = result.reduce(function(a, b){
@@ -40,7 +40,7 @@ function Cart({context}) {
                 "accept":"application/json"
             },
             body: JSON.stringify({
-                skus: createSkus(context.cart),
+                skus: createSkus(context.contextCart),
                 user_id: context.user.id
             })
         }
@@ -48,7 +48,7 @@ function Cart({context}) {
     .then(response => response.json())
     .then(data => {
         // modal/page with order confirmation
-        context.setLocalStorage([])
+        context.setCart([])
 
     })
 

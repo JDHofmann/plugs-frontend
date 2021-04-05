@@ -49,8 +49,8 @@ function Header({context}){
                 onClick={handleCartPreviewClick}
             >
                 <img className="cart-vector" src="/shopping-cart-vector.png"></img>
-                {context.cart.length > 0 ? 
-                <span className="cart-count">{context.cart.length}</span>
+                {context.contextCart.length > 0 ? 
+                <span className="cart-count">{context.contextCart.length}</span>
                 : null }
             </button>
         </header>
