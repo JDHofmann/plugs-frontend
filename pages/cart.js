@@ -1,4 +1,4 @@
-import CartItem from "../components/CartItem";
+import CartItems from "../components/CartItems";
 import Layout from "../components/Layout";
 import withContext from "../withContext";
 
@@ -12,10 +12,6 @@ function Cart({context}) {
     const findProductSku = (id, sku) => {
         let product = findProductById(id);
         return product.skus.filter(s => s.id === sku)[0];
-    }
-    
-    const renderCartItems = () => {
-        return context.contextCart.map(i => <CartItem key={i.id} item={i}/>)
     }
 
     const findPriceSum = () => {
@@ -45,14 +41,11 @@ function Cart({context}) {
             })
         }
         fetch("http://localhost:3000/orders", options)
-    .then(response => response.json())
-    .then(data => {
-        // modal/page with order confirmation
-        context.setCart([])
-
-    })
-
-
+        .then(response => response.json())
+        .then(data => {
+            // modal/page with order confirmation
+            context.setCart([])
+        })
     }
 
     return (
@@ -65,7 +58,8 @@ function Cart({context}) {
                         <span>{findPriceSum()}</span>
                         <span>dollars</span>
                     </caption>
-                    <div className="cart-headers">
+                    <CartItems />
+                    {/* <div className="cart-headers">
                         <h2 className="item-header">Item</h2>
                         <span></span>
                         <h2>Qty</h2>
@@ -77,7 +71,8 @@ function Cart({context}) {
                     <div className="total">
                         <span>Total</span>
                         <span>{findPriceSum()}</span>
-                    </div>
+                    </div> */}
+
                     <button
                         type="submit" 
                         onClick={handleSubmit}
