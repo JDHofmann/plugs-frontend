@@ -30,7 +30,10 @@ function Home({context}) {
 
   const renderLinks = () => {
     return links.map( l => (
-      <div className={ current === links.indexOf(l) ? "link in-view": "link"}>
+      <div
+        key={l.name} 
+        className={ current === links.indexOf(l) ? "link in-view": "link"}
+      >
         <img
           alt=""
           className="link-img"

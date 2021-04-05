@@ -52,11 +52,14 @@
     height: 50vh;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     color: $dark-3;
     p {
         font-size: calc(5vmax + 5px);
         line-height: calc(5vmax + 5px);
         text-align: right;
         margin: 0 10vw;
+        width: 500px;
+        max-width: 100%;
     }
 }

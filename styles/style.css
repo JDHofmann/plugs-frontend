@@ -1041,6 +1041,9 @@ footer span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   color: #303030;
 }
 
@@ -1049,6 +1052,8 @@ footer span {
   line-height: calc(5vmax + 5px);
   text-align: right;
   margin: 0 10vw;
+  width: 500px;
+  max-width: 100%;
 }
 
 .product-grid {
