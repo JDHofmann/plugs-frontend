@@ -45,7 +45,7 @@ function Cart({context}) {
                 user_id: context.user.id
             })
         }
-        fetch("http://localhost:3000/orders", options)
+        fetch("https://candgbackend.herokuapp.com/orders", options)
         .then(response => response.json())
         .then(data => {
             // <ConfirmationModal reciept={data} />
