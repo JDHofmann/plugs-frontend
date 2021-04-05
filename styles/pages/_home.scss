@@ -25,7 +25,7 @@
     position: absolute;
     opacity: 0;
     transition: 1s;
-    z-index: 100;
+    z-index: 0;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -42,7 +42,7 @@
 }
 
 .in-view {
-    z-index: 200;
+    z-index: 10;
     opacity: 1;
     width: calc(1000px - 40px);
     max-width: calc(100% - 40px);

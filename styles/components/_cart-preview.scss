@@ -2,12 +2,15 @@
     @include slideOutBaseStyle();
     box-shadow: -10px 10px $dark-5;
     right: -1px;
-    z-index: 99;
+    z-index: 100;
+
     h2 {
         text-align: center;
         padding-bottom: 20px;
     }
     ul {
+        position: relative;
+        z-index: 300;
         padding: 40px 20px;
         li {
             padding: 20px 40px;
