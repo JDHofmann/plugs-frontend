@@ -67,11 +67,14 @@ function Cart({context}) {
                 }
                 <h1 className="cart-header">Shopping Cart</h1>
                 <div className="cart">
-                    <caption className="clipped">
+                    <div 
+                        className="clipped"
+                        aria-labelledby="cart caption"
+                    >
                         <span>Shopping cart, total</span>
                         <span>{findPriceSum()}</span>
                         <span>dollars</span>
-                    </caption>
+                    </div>
                     <CartItems 
                         findProductById={findProductById}
                         findPriceSum={findPriceSum}

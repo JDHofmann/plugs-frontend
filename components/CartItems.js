@@ -7,7 +7,7 @@ function CartItems({
 }){
     
     const renderCartItems = () => {
-        return context.contextCart.map(i => <CartItem key={i.id} item={i}/>)
+        return context.contextCart.map(i => <CartItem key={i.skuId} item={i}/>)
     }
 
     return (

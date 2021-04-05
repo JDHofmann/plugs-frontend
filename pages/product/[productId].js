@@ -22,7 +22,7 @@ function Product({ context }){
         if (context.contextCart.length < 1){
             newCart = [itemObj];
         }
-        else if ( context.cart.some(obj => obj.skuId === itemObj.skuId) ) {
+        else if ( context.contextCart.some(obj => obj.skuId === itemObj.skuId) ) {
             for(let i = 0; i < currentCart.length; i++){
                 if (currentCart[i].skuId === itemObj.skuId) { 
                     currentCart[i].quantity = parseInt(currentCart[i].quantity) + parseInt(itemObj.quantity);
