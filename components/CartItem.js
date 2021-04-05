@@ -24,12 +24,21 @@ function CartItem({item, context}) {
         context.setLocalStorage(currentCart)
     }
 
+    const handleItemDelete = () => {
+        let currentCart = [...context.cart]
+        let remainingItems = currentCart.filter( i => i.skuId !== item.skuId)
+        context.setLocalStorage(remainingItems)
+    }
+
     return (
         <li 
             key={item.skuId}
             className="cart-item"
         >
-            <button className="delete-item">X</button>
+            <button 
+                onClick={handleItemDelete}
+                className="delete-item"
+            >X</button>
             <div className="item-description">
                 <img src={findProductById(item.productId).frontimg}/>
                 <p className="description-text">{findProductById(item.productId).name}</p>

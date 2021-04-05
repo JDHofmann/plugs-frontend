@@ -39,7 +39,7 @@ function Cart({context}) {
                         <span>dollars</span>
                     </caption>
                     <div className="cart-headers">
-                        <h2>Item</h2>
+                        <h2 className="item-header">Item</h2>
                         <span></span>
                         <h2>Qty</h2>
                         <h2>Price</h2>

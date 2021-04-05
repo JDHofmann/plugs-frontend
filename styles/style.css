@@ -848,6 +848,11 @@ footer span {
   font-weight: 200;
 }
 
+.cart-headers .item-header {
+  -ms-grid-column-align: left;
+      justify-self: left;
+}
+
 .total {
   text-align: right;
   margin: 40px 0;
