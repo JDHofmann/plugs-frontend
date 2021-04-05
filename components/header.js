@@ -1,7 +1,7 @@
 import Link from "next/link";
 import withContext from "../withContext";
 import CartPreview from "./CartPreview";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Menu from "./Menu";
 
 function Header({context}){
