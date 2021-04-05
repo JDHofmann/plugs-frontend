@@ -264,6 +264,12 @@ input.item-quantity:hover, input.item-quantity:focus {
   max-width: 100%;
   z-index: 3000;
   background: #ffffff;
+  padding: 40px 20px;
+}
+
+.confirmation-modal > * {
+  text-align: center;
+  padding: 10px;
 }
 
 .continue-to-shop {
