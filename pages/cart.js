@@ -48,7 +48,6 @@ function Cart({context}) {
         fetch("https://candgbackend.herokuapp.com/orders", options)
         .then(response => response.json())
         .then(data => {
-            // <ConfirmationModal reciept={data} />
             setConfirmationModal(true);
             setConfirmationData(data);
             context.setCart([])
