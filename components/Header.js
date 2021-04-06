@@ -33,7 +33,7 @@ function Header({context}){
             <button 
             className={ menuOpen ? "burger-btn active" : "burger-btn"}
             onClick={handleMenuToggle}
-            aria-labelledby="open-main-menu"
+            aria-label={ menuOpen ? "close main menu" : "open main menu"}
             >
                 <span></span>
                 <span></span>
@@ -41,18 +41,26 @@ function Header({context}){
             </button>
             <Menu menuOpen={menuOpen} />
             <div className="site-title">
-                <Link href="/"><a>C<span>&</span>G</a></Link>
+                <Link href="/"><a aria-label="c & g home page">C<span>&</span>G</a></Link>
             </div>
-            <CartPreview cartPreview={cartPreview}/>
             <button 
                 className="header-cart"
                 onClick={handleCartPreviewClick}
+                aria-label={ cartPreview ? "close shopping cart preview " : "open shopping cart preview" }
             >
-                <img className="cart-vector" src="/shopping-cart-vector.png"></img>
+                <img 
+                    className="cart-vector" 
+                    src="/shopping-cart-vector.png"
+                    alt="" 
+                />
                 {context.contextCart.length > 0 ? 
-                <span className="cart-count">{context.contextCart.length}</span>
+                <span 
+                    className="cart-count"
+                    aria-label={`${context.contextCart.length} items`}
+                >{context.contextCart.length}</span>
                 : null }
             </button>
+            <CartPreview cartPreview={cartPreview}/>
         </header>
         </>
     )
