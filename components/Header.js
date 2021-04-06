@@ -46,15 +46,18 @@ function Header({context}){
             <button 
                 className="header-cart"
                 onClick={handleCartPreviewClick}
-                aria-label={ cartPreview ? "close shopping cart preview" : "open shopping cart preview" }
+                aria-label={ cartPreview ? "close shopping cart preview " : "open shopping cart preview" }
             >
                 <img 
                     className="cart-vector" 
                     src="/shopping-cart-vector.png"
-                    alt="shopping cart" 
+                    alt="" 
                 />
                 {context.contextCart.length > 0 ? 
-                <span className="cart-count">{context.contextCart.length}</span>
+                <span 
+                    className="cart-count"
+                    aria-label={`${context.contextCart.length} items`}
+                >{context.contextCart.length}</span>
                 : null }
             </button>
             <CartPreview cartPreview={cartPreview}/>
