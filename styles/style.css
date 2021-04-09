@@ -470,6 +470,14 @@ input.product-qty:hover, input.product-qty:focus {
   display: block;
   border: none;
   margin-bottom: 20px;
+  outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.product-thumbnails .product-thumbnail:hover, .product-thumbnails .product-thumbnail:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
 }
 
 .product-thumbnails .product-thumbnail img {
@@ -609,10 +617,19 @@ header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
 
 .site-title {
   font-size: 24px;
+  margin: 5px;
+  outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 .site-title span {
   font-size: 16px;
+}
+
+.site-title:hover, .site-title:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
 }
 
 .header-cart {
@@ -981,6 +998,10 @@ footer span {
   background: #d0d0d0;
 }
 
+.scrolling-links-container .category-link-wrapper {
+  display: none;
+}
+
 .scrolling-links-container .link .category-link {
   position: absolute;
   top: 40vmax;
@@ -995,7 +1016,14 @@ footer span {
   padding: 0 5vw;
   margin: 0 10vw;
   background: #ff9966;
-  border-radius: 3px;
+  outline: none;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.scrolling-links-container .link .category-link:hover, .scrolling-links-container .link .category-link:focus {
+  outline-offset: 3px;
+  outline: 2px solid #303030;
 }
 
 .link {
@@ -1031,6 +1059,10 @@ footer span {
   opacity: 1;
   width: calc(1000px - 40px);
   max-width: calc(100% - 40px);
+}
+
+.in-view .category-link-wrapper {
+  display: block;
 }
 
 .mission {

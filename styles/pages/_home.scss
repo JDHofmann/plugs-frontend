@@ -3,6 +3,9 @@
     width: 100%;
     overflow-y: hidden;
     background: $light-3;
+    .category-link-wrapper {
+        display: none;
+    }
     .link .category-link {
         position: absolute;
         top: 40vmax;
@@ -13,7 +16,8 @@
         padding: 0 5vw;
         margin: 0 10vw;
         background: $brand;
-        border-radius: 3px;
+        @include hoverFocus();
+
     }
 }
 
@@ -46,6 +50,9 @@
     opacity: 1;
     width: calc(1000px - 40px);
     max-width: calc(100% - 40px);
+    .category-link-wrapper {
+        display: block;
+    }
 }
 
 .mission {

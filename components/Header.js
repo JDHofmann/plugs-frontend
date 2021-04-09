@@ -43,7 +43,6 @@ function Header({context}){
             <div className="site-title">
                 <Link href="/"><a>C<span>&</span>G</a></Link>
             </div>
-            <CartPreview cartPreview={cartPreview}/>
             <button 
                 className="header-cart"
                 onClick={handleCartPreviewClick}
@@ -53,6 +52,7 @@ function Header({context}){
                 <span className="cart-count">{context.contextCart.length}</span>
                 : null }
             </button>
+            <CartPreview cartPreview={cartPreview}/>
         </header>
         </>
     )

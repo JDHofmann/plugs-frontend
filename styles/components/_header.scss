@@ -76,9 +76,11 @@ header {
 }
 .site-title {
     font-size: 24px;
+    margin: 5px;
     span {
         font-size: 16px;
     }
+    @include hoverFocus();
 }
 
 .header-cart {

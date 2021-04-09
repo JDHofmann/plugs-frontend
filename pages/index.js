@@ -40,7 +40,7 @@ function Home({context}) {
           src={l.url}
         />
         <Link href={"/category/" + l.name} >
-          <a className="category-link" >Shop {l.name}</a>
+          <a tabindex="-1" className="category-link" >Shop {l.name}</a>
         </Link>
       </div>
     ))

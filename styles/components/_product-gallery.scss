@@ -28,6 +28,7 @@
         display: block;
         border: none;
         margin-bottom: 20px;
+        @include hoverFocus();
         img {
             width: 100%;
             height: 100%;
