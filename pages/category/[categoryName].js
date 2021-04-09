@@ -14,7 +14,7 @@ function Category({context}){
     useEffect( () => {
                 let foundCategory = context.products.filter( p => p.category === categoryName);
                 setCategory(foundCategory);
-    }, [context.products])
+    }, [categoryName])
     
     const renderProductItems = () => {
         return category.map(fp => <ProductCard key={fp.id} product={fp}/>)
