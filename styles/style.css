@@ -580,7 +580,7 @@ header .active {
 header .active span:nth-child(1) {
   -webkit-transform: rotate(0.125turn);
           transform: rotate(0.125turn);
-  top: 13px;
+  top: 13.5px;
 }
 
 header .active span:nth-child(2) {
@@ -590,7 +590,7 @@ header .active span:nth-child(2) {
 header .active span:nth-child(3) {
   -webkit-transform: rotate(-0.625turn);
           transform: rotate(-0.625turn);
-  bottom: 13px;
+  bottom: 13.5px;
 }
 
 header .active:hover span:nth-child(2), header .active:focus span:nth-child(2) {
